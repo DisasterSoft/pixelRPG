@@ -1,7 +1,66 @@
 fileFormatVersion: 2
 guid: c39d6b00005154c47a5eae3a72c4e8aa
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: occ01_mv04_jaiin_sv_0
+    21300002: occ01_mv04_jaiin_sv_1
+    21300004: occ01_mv04_jaiin_sv_2
+    21300006: occ01_mv04_jaiin_sv_3
+    21300008: occ01_mv04_jaiin_sv_4
+    21300010: occ01_mv04_jaiin_sv_5
+    21300012: occ01_mv04_jaiin_sv_6
+    21300014: occ01_mv04_jaiin_sv_7
+    21300016: occ01_mv04_jaiin_sv_8
+    21300018: occ01_mv04_jaiin_sv_9
+    21300020: occ01_mv04_jaiin_sv_10
+    21300022: occ01_mv04_jaiin_sv_11
+    21300024: occ01_mv04_jaiin_sv_12
+    21300026: occ01_mv04_jaiin_sv_13
+    21300028: occ01_mv04_jaiin_sv_14
+    21300030: occ01_mv04_jaiin_sv_15
+    21300032: occ01_mv04_jaiin_sv_16
+    21300034: occ01_mv04_jaiin_sv_17
+    21300036: occ01_mv04_jaiin_sv_18
+    21300038: occ01_mv04_jaiin_sv_19
+    21300040: occ01_mv04_jaiin_sv_20
+    21300042: occ01_mv04_jaiin_sv_21
+    21300044: occ01_mv04_jaiin_sv_22
+    21300046: occ01_mv04_jaiin_sv_23
+    21300048: occ01_mv04_jaiin_sv_24
+    21300050: occ01_mv04_jaiin_sv_25
+    21300052: occ01_mv04_jaiin_sv_26
+    21300054: occ01_mv04_jaiin_sv_27
+    21300056: occ01_mv04_jaiin_sv_28
+    21300058: occ01_mv04_jaiin_sv_29
+    21300060: occ01_mv04_jaiin_sv_30
+    21300062: occ01_mv04_jaiin_sv_31
+    21300064: occ01_mv04_jaiin_sv_32
+    21300066: occ01_mv04_jaiin_sv_33
+    21300068: occ01_mv04_jaiin_sv_34
+    21300070: occ01_mv04_jaiin_sv_35
+    21300072: occ01_mv04_jaiin_sv_36
+    21300074: occ01_mv04_jaiin_sv_37
+    21300076: occ01_mv04_jaiin_sv_38
+    21300078: occ01_mv04_jaiin_sv_39
+    21300080: occ01_mv04_jaiin_sv_40
+    21300082: occ01_mv04_jaiin_sv_41
+    21300084: occ01_mv04_jaiin_sv_42
+    21300086: occ01_mv04_jaiin_sv_43
+    21300088: occ01_mv04_jaiin_sv_44
+    21300090: occ01_mv04_jaiin_sv_45
+    21300092: occ01_mv04_jaiin_sv_46
+    21300094: occ01_mv04_jaiin_sv_47
+    21300096: occ01_mv04_jaiin_sv_48
+    21300098: occ01_mv04_jaiin_sv_49
+    21300100: occ01_mv04_jaiin_sv_50
+    21300102: occ01_mv04_jaiin_sv_51
+    21300104: occ01_mv04_jaiin_sv_52
+    21300106: occ01_mv04_jaiin_sv_53
+    21300108: occ01_mv04_jaiin_sv_54
+    21300110: occ01_mv04_jaiin_sv_55
+    21300112: occ01_mv04_jaiin_sv_56
+    21300114: occ01_mv04_jaiin_sv_57
+    21300116: occ01_mv04_jaiin_sv_58
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -40,7 +99,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -69,9 +128,1255 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_0
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 322
+        width: 34
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d3bf3bab5b42e245bbbd4723dffd0bc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_1
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 322
+        width: 35
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0fc3092aad13b841a886d2e444ada77
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_2
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 322
+        width: 37
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3f2398ccdd7dab44851cb5ce525e669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_3
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 322
+        width: 34
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2afefa4c4f8dfa045b5e01644b079981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_4
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 322
+        width: 38
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81b6707ea165d9148812274c7756b253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_5
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 322
+        width: 38
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21ada6b1bf0459d438eeeeee8b317e13
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_6
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 322
+        width: 34
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13659ccf2e4f4a24b8efdbd13cc26e25
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_7
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 322
+        width: 34
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa1eed310b36d03448c653ffa9539fba
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_8
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 322
+        width: 34
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80bebdb66e1855a4d9b5f1670e9733b6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_9
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 258
+        width: 34
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc7ae703bfa077748915baf3eed372ad
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_10
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 258
+        width: 35
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5811c0e25910d84a9547192e3f63872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_11
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 258
+        width: 36
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4856d03705700a7458cef2badbe61451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_12
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 258
+        width: 34
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6aba77358567f7458fddeff335348aa
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_13
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 258
+        width: 34
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72f1edb87b3be9d4583fcca5442e3449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_14
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 258
+        width: 34
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05d0fecff2a5c364c8adca46aa409389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_15
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 301
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c89191751778d4d4fbe0ae2ca17a3174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_16
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 258
+        width: 34
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70d446f5ed36cec48967f7108ab6542f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_17
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 258
+        width: 34
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f08fc92bb4e5f4d43b641d2b0ba4e343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_18
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 258
+        width: 34
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71e2fc4bbc28f4c42b0f149e2e18a218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_19
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 292
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a18d547fd16162a47b6aaa77ba9af4b0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_20
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 296
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cd0ae083709ca04e835d65fe686f56f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_21
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 287
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5253c5d2872c60242b15a39b386b0137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_22
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 194
+        width: 44
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b382d6832b520e4a84d747d2058c01b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_23
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 194
+        width: 45
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0a96778b8e1afd4a950167e20423083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_24
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 194
+        width: 47
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e26fca0c567956f41b14cce37fcc8ed9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_25
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 194
+        width: 37
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c1783aa843288943b188442c425dd88
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_26
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 194
+        width: 37
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b19a0e71c329ad41957801b729a51fb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_27
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 194
+        width: 37
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a1090fab724e4d46b6e08a27fb573d6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_28
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 193
+        width: 37
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c137449354bf1749ace77349542bb4e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_29
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 193
+        width: 37
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e03471d6d7584b4d91e8eae2363f7ca
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_30
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 193
+        width: 37
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9a4c6af9da9c104fa358028c4669059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_31
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 130
+        width: 32
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94a6cf4f2e53aae40923486bf837b398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_32
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 130
+        width: 32
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6805c438c7589d4aa2f08f598e9fb8e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_33
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 130
+        width: 32
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7318cb6c8965ba94cbbc9bc321dd3a27
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_34
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 130
+        width: 32
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 683d773f6b8e21e4a97005254bb73f3e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_35
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 130
+        width: 42
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0408e32a4f90ee94a8bb539154d8c9ec
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_36
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 130
+        width: 42
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 818292407a355fd4e9b26181c12dba5d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_37
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 129
+        width: 37
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1887fa37a4e0f9349897e5b38a3aa304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_38
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 129
+        width: 37
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6692dc29e856bc489428d2bb4e50bae
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_39
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 129
+        width: 37
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8814093bf21908747b4e01328337fcaf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_40
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 66
+        width: 35
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c7e88389a599a440aad0231d3776827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_41
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 66
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fd5a7a339580a74e93d21b79209a682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_42
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 66
+        width: 33
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f064c9704c337e4597b71b90d0f1381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_43
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 66
+        width: 39
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f9c7096a30b522419daa64f321a576a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_44
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 66
+        width: 32
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f34e267506a5a434ca01ad646bd557a8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_45
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 66
+        width: 42
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37e850af79c9b10459c1c47ef612180e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_46
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 66
+        width: 42
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 769e1b9ed570c27479a70f7b8b74dc88
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_47
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 66
+        width: 43
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d35de2571f577e946872734d63399f53
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_48
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 66
+        width: 43
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9651fba358eb0144380a91974a93ffe1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_49
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 66
+        width: 43
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98318ca820f55f94c82239320b3d0479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_50
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 2
+        width: 34
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcc899feb9dfe4e41aa7f1d9f909d8b0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_51
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 2
+        width: 34
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49bd46a978348e4489441150f9dfec44
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_52
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 2
+        width: 34
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4da1f47ccdcfd5f4db76aeede7835205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_53
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 2
+        width: 32
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cf5c8e62761f5e4891ad349fadfd719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_54
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 2
+        width: 32
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41735d85aaa6800488e14ca9cb96ad94
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_55
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 2
+        width: 32
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 415f65b84d46ab44bb979681497115e2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_56
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 2
+        width: 62
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e1beba89e7f53e4f9706bb651b209a6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_57
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 2
+        width: 62
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 775da763ae49d8944bef02a9949cd01c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occ01_mv04_jaiin_sv_58
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2
+        width: 62
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60cd1ed353c3b354393377bad57d5180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
