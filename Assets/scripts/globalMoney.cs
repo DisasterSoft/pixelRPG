@@ -19,9 +19,14 @@ public class globalMoney : MonoBehaviour
     {
         money.GetComponent<Text>().text = moneyI.ToString();
     }
-    public void setMoney(int db)
+    public static void setMoney(int db)
     {
 
+        moneyI += db;
+        globalVariable.money = moneyI;
+    }
+    public  void setMoney1(int db)
+    {
         moneyI += db;
         globalVariable.money = moneyI;
     }

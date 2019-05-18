@@ -60,14 +60,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Elemek\DungeonTools\Editor\DGCore.cs" />
-    <Compile Include="Assets\Elemek\DungeonTools\Editor\DGCustomClasses.cs" />
-    <Compile Include="Assets\Elemek\DungeonTools\Editor\DGMap.cs" />
-    <Compile Include="Assets\Elemek\DungeonTools\Editor\DGRoomClass.cs" />
-    <Compile Include="Assets\Elemek\DungeonTools\Editor\DGWindow.cs" />
-    <Compile Include="Assets\Elemek\DungeonTools\Editor\DRCore.cs" />
-    <Compile Include="Assets\Elemek\DungeonTools\Editor\DRCustomEditor.cs" />
-    <Compile Include="Assets\Elemek\DungeonTools\Editor\DRWindow.cs" />
     <Compile Include="Assets\Fungus\Scripts\Editor\AssetModProcessor.cs" />
     <Compile Include="Assets\Fungus\Scripts\Editor\BasePopupWindowContent.cs" />
     <Compile Include="Assets\Fungus\Scripts\Editor\BlockEditor.cs" />
@@ -127,6 +119,11 @@
     <Compile Include="Assets\Fungus\Thirdparty\FungusLua\Scripts\Editor\MenuItems.cs" />
     <Compile Include="Assets\Fungus\Thirdparty\LineEndings\Editor\LineEndingsEditMenu.cs" />
     <Compile Include="Assets\Fungus\Thirdparty\Usfxr\Editor\SfxrGenerator.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Editor\PListProcessor.cs" />
+    <Compile Include="Assets\Resources\Editor\CM Tools\TileMaster\TileMaster.cs" />
+    <None Include="Assets\PlayServicesResolver\Editor\play-services-resolver_v1.2.102.0.txt" />
+    <None Include="Assets\Resources\Editor\CM Tools\TileMasterReadme.txt" />
+    <None Include="Assets\GoogleMobileAds\Editor\GoogleMobileAdsDependencies.xml" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/Android repok/pixelRPG/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -405,6 +402,18 @@
     </Reference>
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.IOSResolver_v1.2.102.0">
+      <HintPath>D:/Android repok/pixelRPG/Assets/PlayServicesResolver/Editor/Google.IOSResolver_v1.2.102.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.JarResolver_v1.2.102.0">
+      <HintPath>D:/Android repok/pixelRPG/Assets/PlayServicesResolver/Editor/Google.JarResolver_v1.2.102.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.VersionHandler">
+      <HintPath>D:/Android repok/pixelRPG/Assets/PlayServicesResolver/Editor/Google.VersionHandler.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.VersionHandlerImpl_v1.2.102.0">
+      <HintPath>D:/Android repok/pixelRPG/Assets/PlayServicesResolver/Editor/Google.VersionHandlerImpl_v1.2.102.0.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>D:/Android repok/pixelRPG/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
@@ -783,17 +792,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{FD59EA46-EE6F-2B72-E873-DDD7A1E3EAD2}</Project>
-      <Name>Assembly-CSharp-firstpass</Name>
-    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{10E42EDF-7619-AAE7-4ECF-3D7A8A283F44}</Project>
       <Name>Assembly-CSharp</Name>
-    </ProjectReference>
-    <ProjectReference Include="Assembly-CSharp-Editor-firstpass.csproj">
-      <Project>{B9877FF4-B0B2-6F9A-BB03-B63819275DD8}</Project>
-      <Name>Assembly-CSharp-Editor-firstpass</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

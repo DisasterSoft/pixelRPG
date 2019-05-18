@@ -204,7 +204,6 @@ D:\Android repok\pixelRPG\Temp\bin\Debug\Unity.IvyParser.dll
 D:\Android repok\pixelRPG\Temp\bin\Debug\Unity.CecilTools.dll
 D:\Android repok\pixelRPG\Temp\bin\Debug\Unity.Cecil.Pdb.dll
 D:\Android repok\pixelRPG\Temp\bin\Debug\Unity.Cecil.Mdb.dll
-D:\Android repok\pixelRPG\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
 D:\Android repok\pixelRPG\Temp\bin\Debug\UnityEngine.xml
 D:\Android repok\pixelRPG\Temp\bin\Debug\UnityEditor.xml
 D:\Android repok\pixelRPG\Temp\bin\Debug\Unity.TextMeshPro.Editor.pdb

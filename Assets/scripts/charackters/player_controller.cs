@@ -9,6 +9,7 @@ public class player_controller : MonoBehaviour
     public string HorizontalAxis = "Horizontal";
     public string VerticalAxis = "Vertical";
     public static GameObject player;
+    public LeftJoystick leftJoystick;
     public float moveSpeed;
     Animator anim;
     SpriteRenderer render;
@@ -21,7 +22,8 @@ public class player_controller : MonoBehaviour
     public bool moveRightB = false;
     public bool moveUpB = false;
     public bool moveDownB = false;
-   
+    private Vector3 leftJoystickInput;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,23 +39,25 @@ public class player_controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        leftJoystickInput = leftJoystick.GetInputDirection();
+       
         playFootStep();
-        if (Input.GetAxis("Horizontal") > 0.7f)
+        if (leftJoystickInput.x > 0.7f)
         {
            
             moveRight();
         }
-        else if(Input.GetAxis("Horizontal") < -0.7f)
+        else if(leftJoystickInput.x < -0.7f)
         {
            
             moveLeft();
         }
-        else if (Input.GetAxis("Vertical") > 0.7f)
+        else if (leftJoystickInput.y > 0.7f)
         {
 
             moveUP();
         }
-        else if(Input.GetAxis("Vertical") < -0.7f)
+        else if(leftJoystickInput.y < -0.7f)
         {
          
             moveDown();

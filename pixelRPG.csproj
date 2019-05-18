@@ -257,15 +257,6 @@
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>D:/Android repok/pixelRPG/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>D:/unity/Editor/Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>D:/unity/Editor/Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>D:\unity\Editor\Data\PlaybackEngines\AppleTVSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
     <Reference Include="netstandard">
       <HintPath>D:\unity\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
     </Reference>
@@ -613,10 +604,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="pixelRPG.Plugins.csproj">
-      <Project>{D1F272AA-1F54-6F94-D93B-FEE14D6FFD09}</Project>
-      <Name>pixelRPG.Plugins</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.TextMeshPro.Editor.csproj">
       <Project>{3A848AB7-9891-EDDA-D555-BF184C2F81F4}</Project>
       <Name>Unity.TextMeshPro.Editor</Name>
@@ -639,19 +626,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Elemek\DungeonTools\Scripts\DRId.cs" />
     <Compile Include="Assets\Elemek\GGEZ\PerfectPixelCamera\Demo\Assets\ZoomDemo.cs" />
     <Compile Include="Assets\Elemek\GGEZ\PerfectPixelCamera\Scripts\PerfectPixelCamera.cs" />
-    <Compile Include="Assets\Elemek\HyperLuminal\2D Fantasy Forest Tileset\Scripts\CameraFollow.cs" />
-    <Compile Include="Assets\Elemek\HyperLuminal\2D Fantasy Forest Tileset\Scripts\CollectableBounce.cs" />
-    <Compile Include="Assets\Elemek\HyperLuminal\2D Fantasy Forest Tileset\Scripts\Door.cs" />
-    <Compile Include="Assets\Elemek\HyperLuminal\2D Fantasy Forest Tileset\Scripts\FadeScript.cs" />
-    <Compile Include="Assets\Elemek\HyperLuminal\2D Fantasy Forest Tileset\Scripts\MenuButtons.cs" />
-    <Compile Include="Assets\Elemek\HyperLuminal\2D Fantasy Forest Tileset\Scripts\PlayerMovement.cs" />
-    <Compile Include="Assets\Elemek\HyperLuminal\2D Fantasy Forest Tileset\Scripts\SpikeTrap.cs" />
-    <Compile Include="Assets\Elemek\HyperLuminal\2D Fantasy Forest Tileset\Scripts\Tile.cs" />
-    <Compile Include="Assets\Elemek\HyperLuminal\2D Fantasy Forest Tileset\Scripts\TimedAnimations.cs" />
-    <Compile Include="Assets\Elemek\HyperLuminal\2D Fantasy Forest Tileset\Scripts\Trigger.cs" />
     <Compile Include="Assets\Fungus\Scripts\Commands\Break.cs" />
     <Compile Include="Assets\Fungus\Scripts\Commands\Call.cs" />
     <Compile Include="Assets\Fungus\Scripts\Commands\CallMethod.cs" />
@@ -1199,6 +1175,54 @@
     <Compile Include="Assets\Fungus\Thirdparty\Usfxr\Scripts\SfxrCacheSurrogate.cs" />
     <Compile Include="Assets\Fungus\Thirdparty\Usfxr\Scripts\SfxrParams.cs" />
     <Compile Include="Assets\Fungus\Thirdparty\Usfxr\Scripts\SfxrSynth.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\AdapterStatus.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\AdErrorEventArgs.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\AdFailedToLoadEventArgs.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\AdLoader.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\AdPosition.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\AdRequest.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\AdSize.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\BannerView.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\CustomNativeEventArgs.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\CustomNativeTemplateAd.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\Gender.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\InterstitialAd.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\Mediation\MediationExtras.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\MobileAds.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\Reward.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\RewardBasedVideoAd.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Api\RewardedAd.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Common\DummyClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Common\IAdLoaderClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Common\IBannerClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Common\ICustomNativeTemplateClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Common\IInterstitialClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Common\IMobileAdsClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Common\IRewardBasedVideoAdClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Common\IRewardedAdClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Common\MobileAdsEventExecutor.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Common\RewardedAdDummyClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Common\Utils.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\Android\AdLoaderClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\Android\BannerClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\Android\CustomNativeTemplateClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\Android\InterstitialClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\Android\MobileAdsClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\Android\RewardBasedVideoAdClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\Android\RewardedAdClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\Android\Utils.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\GoogleMobileAdsClientFactory.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\AdLoaderClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\BannerClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\CustomNativeTemplateClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\Externs.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\InterstitialClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\MobileAdsClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\MonoPInvokeCallbackAttribute.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\RewardBasedVideoAdClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\RewardedAdClient.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\Utils.cs" />
+    <Compile Include="Assets\scripts\ads.cs" />
     <Compile Include="Assets\scripts\battleScripts\battleScript.cs" />
     <Compile Include="Assets\scripts\battleScripts\onBattleClicked.cs" />
     <Compile Include="Assets\scripts\battleScripts\onTileClick.cs" />
@@ -1207,13 +1231,13 @@
     <Compile Include="Assets\scripts\cameraSript.cs" />
     <Compile Include="Assets\scripts\cardScript.cs" />
     <Compile Include="Assets\scripts\charackters\archer1Script1.cs" />
-    <Compile Include="Assets\scripts\charackters\ChestScripts.cs" />
     <Compile Include="Assets\scripts\charackters\dancer1Script.cs" />
     <Compile Include="Assets\scripts\charackters\knightScripts.cs" />
     <Compile Include="Assets\scripts\charackters\knightScripts1.cs" />
     <Compile Include="Assets\scripts\charackters\langolofa.cs" />
     <Compile Include="Assets\scripts\charackters\player_controller.cs" />
     <Compile Include="Assets\scripts\enemys\blueImp.cs" />
+    <Compile Include="Assets\scripts\enemys\creatureScript.cs" />
     <Compile Include="Assets\scripts\enemys\impScript1.cs" />
     <Compile Include="Assets\scripts\enemys\redImp.cs" />
     <Compile Include="Assets\scripts\enemys\wolftScript.cs" />
@@ -1222,9 +1246,24 @@
     <Compile Include="Assets\scripts\globalVariable.cs" />
     <Compile Include="Assets\scripts\goingOut.cs" />
     <Compile Include="Assets\scripts\joystick.cs" />
+    <Compile Include="Assets\scripts\misc\ChestScripts.cs" />
     <Compile Include="Assets\scripts\misc\chicken.cs" />
+    <Compile Include="Assets\scripts\misc\enterTavern.cs" />
+    <Compile Include="Assets\scripts\misc\playTavernMusic.cs" />
+    <Compile Include="Assets\scripts\misc\tavernBlocked.cs" />
+    <Compile Include="Assets\scripts\misc\tavernSpeeker.cs" />
     <Compile Include="Assets\scripts\misc\wishps.cs" />
-    <Compile Include="Assets\scripts\tavernBlocked.cs" />
+    <Compile Include="Assets\TouchJoysticks\Scripts\DualJoystickPlayerController.cs" />
+    <Compile Include="Assets\TouchJoysticks\Scripts\DualJoystickTouchContoller.cs" />
+    <Compile Include="Assets\TouchJoysticks\Scripts\LeftJoystick.cs" />
+    <Compile Include="Assets\TouchJoysticks\Scripts\LeftJoystickPlayerController.cs" />
+    <Compile Include="Assets\TouchJoysticks\Scripts\LeftJoystickTouchContoller.cs" />
+    <Compile Include="Assets\TouchJoysticks\Scripts\RightJoystick.cs" />
+    <Compile Include="Assets\TouchJoysticks\Scripts\RightJoystickPlayerController.cs" />
+    <Compile Include="Assets\TouchJoysticks\Scripts\RightJoystickTouchContoller.cs" />
+    <Compile Include="Assets\TouchJoysticks\Scripts\SingleJoystick.cs" />
+    <Compile Include="Assets\TouchJoysticks\Scripts\SingleJoystickPlayerController.cs" />
+    <Compile Include="Assets\TouchJoysticks\Scripts\SingleJoystickTouchController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Elemek\Characters\Attribution.txt" />
@@ -1235,7 +1274,6 @@
     <None Include="Assets\Elemek\Characters\readme.txt" />
     <None Include="Assets\Elemek\FreePixelGear\ReadMe.txt" />
     <None Include="Assets\Elemek\GGEZ\PerfectPixelCamera\README.txt" />
-    <None Include="Assets\Elemek\Tiny Fantasy Icons\README.txt" />
     <None Include="Assets\Fungus\Docs\CHANGELOG.txt" />
     <None Include="Assets\Fungus\Docs\LICENSE.txt" />
     <None Include="Assets\Fungus\Docs\README.txt" />
@@ -1268,10 +1306,16 @@
     <None Include="Assets\Fungus\Thirdparty\TextMeshPro\Resources\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\Fungus\Thirdparty\TextMeshPro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\Fungus\Thirdparty\ThirdPartyNotices.txt" />
+    <None Include="Assets\GoogleMobileAds\Editor\GoogleMobileAdsDependencies.xml" />
+    <None Include="Assets\PlayServicesResolver\Editor\play-services-resolver_v1.2.102.0.txt" />
+    <None Include="Assets\Resources\Editor\CM Tools\TileMasterReadme.txt" />
     <None Include="Assets\audio\Battle Music Album - 030718\Notes.txt" />
     <None Include="Assets\audio\Fantasy Arcade RPG Freedom World Sounds - Free Package\assetexplain.txt" />
     <None Include="Assets\audio\Monster\Notes.txt" />
     <None Include="Assets\audio\RPG Album - 011518\Notes.txt" />
+    <None Include="Assets\plugins\Android\GoogleMobileAdsPlugin\AndroidManifest.xml" />
+    <None Include="Assets\plugins\Android\GoogleMobileAdsPlugin\new 2.xml" />
+    <None Include="Assets\read me.txt" />
     <None Include="Packages\com.unity.analytics\DataPrivacy\Unity.Analytics.DataPrivacy.asmdef" />
     <None Include="Packages\com.unity.analytics\Tests\Editor\Unity.Analytics.StandardEvents\Unity.Analytics.StandardEvents.EditorTests.asmdef" />
     <None Include="Packages\com.unity.analytics\Tests\Runtime\DataPrivacy\Unity.Analytics.DataPrivacy.Tests.asmdef" />

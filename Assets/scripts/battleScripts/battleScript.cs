@@ -26,22 +26,13 @@ public class battleScript : MonoBehaviour
     public static string[] tileS = new string[64];
     public  string[] tileSS = new string[64];
     public static string[] tileSLocal = new string[64];
+    public int givingMoney = 0;
     public static  creatureScript.CREATURE[] leny=new creatureScript.CREATURE[12];
-    
+   
+
     // Start is called before the first frame update
     void Start()
     {
-        globalSlots.slot1I = 40;
-        globalSlots.slot1T = "k";
-        globalSlots.slot2T = "ar";
-        globalSlots.slot2I = 40;
-
-        globalSlots.slot7T = "BImp";
-        globalSlots.slot9T = "BImp";
-        globalSlots.slot8T = "RImp";
-        globalSlots.slot7I = 40;
-        globalSlots.slot9I = 35;
-        globalSlots.slot8I = 20;
         for (int i = 0; i < 64; i++)
         {
             TileModel[i] = GameObject.Find("simpleTile" + i);
@@ -107,14 +98,21 @@ public class battleScript : MonoBehaviour
                 if (i == 0 && j == 0 && globalSlots.slot7I > 0)
                 {
                     numberOfEnemy++;
+                    givingMoney += globalSlots.slot7I;
                     if (globalSlots.slot7T == "BImp")
                     {
                         leny[6] = new creatureScript.CREATURE(4, 4, 3, "Blue Ipm", "BImp", globalSlots.slot7I, "Sprites/walk_vanilla_BIMP", "audio/mob2", "audio/mob2die", "Animations/blueImpAnim","");
-
+                        enemys[0].transform.localScale = new Vector3(3, 3, 3);
                     }
                     if (globalSlots.slot7T == "RImp")
                     {
                         leny[6] = new creatureScript.CREATURE(5, 5, 4, "Red Ipm", "RImp", globalSlots.slot7I, "Sprites/walk_vanilla_RIMP", "audio/mob3", "audio/mob3die", "Animations/redImpAnim","");
+                        enemys[0].transform.localScale = new Vector3(3, 3, 3);
+                    }
+                    if (globalSlots.slot7T == "w1")
+                    {
+                        leny[6] = new creatureScript.CREATURE(1, 3, 1, "Wolf", "w1", globalSlots.slot7I, "Sprites/wolfsheet1", "audio/wolf1", "audio/wolf1Die", "Animations/wolfenemy1", "");
+                        enemys[0].transform.localScale = new Vector3(2, 2, 2);
                     }
 
                     enemys[0].AddComponent<Animator>();
@@ -131,14 +129,21 @@ public class battleScript : MonoBehaviour
                 if (i == 2 && j == 0 && globalSlots.slot8I > 0)
                 {
                     numberOfEnemy++;
+                    givingMoney += globalSlots.slot8I;
                     if (globalSlots.slot8T == "RImp")
                     {
                         leny[7] = new creatureScript.CREATURE(5, 5, 4, "Red Ipm", "RImp", globalSlots.slot8I, "Sprites/walk-vanilla_RIMP", "audio/mob3", "audio/mob3die", "Animations/redImpAnim","");
+                        enemys[1].transform.localScale = new Vector3(3, 3, 3);
                     }
                     if (globalSlots.slot8T == "BImp")
                     {
                         leny[7] = new creatureScript.CREATURE(4, 4, 3, "Blue Ipm", "BImp", globalSlots.slot8I, "Sprites/walk_vanilla_BIMP", "audio/mob2", "audio/mob2die", "Animations/blueImpAnim","");
-
+                        enemys[1].transform.localScale = new Vector3(3, 3, 3);
+                    }
+                    if (globalSlots.slot8T == "w1")
+                    {
+                        leny[7] = new creatureScript.CREATURE(1, 3, 1, "Wolf", "w1", globalSlots.slot8I, "Sprites/wolfsheet1", "audio/wolf1", "audio/wolf1Die", "Animations/wolfenemy1", "");
+                        enemys[1].transform.localScale = new Vector3(2, 2, 2);
                     }
                     enemys[1].AddComponent<Animator>();
                        
@@ -156,13 +161,21 @@ public class battleScript : MonoBehaviour
                 if (i == 4 && j == 0 && globalSlots.slot9I > 0)
                 {
                     numberOfEnemy++;
+                    givingMoney += globalSlots.slot9I;
                     if (globalSlots.slot9T == "BImp")
                     {
                         leny[8] = new creatureScript.CREATURE(4, 4, 3, "Blue Ipm", "BImp", globalSlots.slot9I, "Sprites/walk_vanilla_BIMP", "audio/mob2", "audio/mob2die", "Animations/blueImpAnim","");
+                        enemys[2].transform.localScale = new Vector3(3, 3, 3);
                     }
                     if (globalSlots.slot9T == "RImp")
                     {
                         leny[8] = new creatureScript.CREATURE(5, 5, 4, "Red Ipm", "RImp", globalSlots.slot9I, "Sprites/walk_vanilla_RIMP", "audio/mob3", "audio/mob3die", "Animations/redImpAnim","");
+                        enemys[2].transform.localScale = new Vector3(3, 3, 3);
+                    }
+                    if (globalSlots.slot9T == "w1")
+                    {
+                        leny[8] = new creatureScript.CREATURE(1, 3, 1, "Wolf", "w1", globalSlots.slot8I, "Sprites/wolfsheet1", "audio/wolf1", "audio/wolf1Die", "Animations/wolfenemy1", "");
+                        enemys[2].transform.localScale = new Vector3(2, 2, 2);
                     }
                     enemys[2].AddComponent<Animator>();
                        
@@ -180,7 +193,7 @@ public class battleScript : MonoBehaviour
                 }
         }
         //tileSLocal1 = tileS;
-        kiirMap();
+        //kiirMap();
     }
 
     // Update is called once per frame
@@ -193,8 +206,12 @@ public class battleScript : MonoBehaviour
         }
         if(numberOfEnemy<1)
         {
-            flowchart.SendFungusMessage("youWin");
-            globalVariable.isloaded = true;
+            if (globalVariable.isloaded == false)
+            {
+                flowchart.SendFungusMessage("youWin");
+                globalMoney.setMoney(givingMoney);
+                globalVariable.isloaded = true;
+            }
         }
         whereTogo1 = whereTogo;
         if(painted==false)
@@ -231,7 +248,7 @@ public class battleScript : MonoBehaviour
             int position = 0;
             if (searched == false)
             {
-                kiirMap();
+                //kiirMap();
                 position = getLeny("2");
                 
                 if (position == 100)
@@ -411,8 +428,14 @@ public class battleScript : MonoBehaviour
         }
         if (round==9)
         {
-            attackEnemy();
-
+            if (globalSlots.slot9I > 0)
+            {
+                attackEnemy();
+            }
+            else
+            {
+                moved = true;
+            }
             if (moved == true)
             {
                 moved = false;
@@ -1158,10 +1181,12 @@ public class battleScript : MonoBehaviour
             }
         }
     }
-    public void MoveEnemy(int ki,string search)
+    public void MoveEnemy(int ki,string search,int enemy)
     {
         int move = leny[ki].move;
-        int dmg = leny[ki].dmg;
+        int amove = leny[ki].move;
+        int dmg = leny[ki].admg* leny[ki].db;
+        int stop = 0;
         string shortName = leny[ki].sortName;
         string lenyName = leny[ki].name;
         string target = "";
@@ -1177,12 +1202,14 @@ public class battleScript : MonoBehaviour
         int distance = 0;
         int distance1 = 0;
         bool enemyAttack = false;
+        bool moveYourAss = false;
         if (posi < 100)
         {
             while (move > 0)
             {
-
-                distance = posi - myPosi;
+                if(stop>(amove*2))
+                { break; }
+                distance = Mathf.Abs(posi - myPosi);
                 distance1 = distance;
                 int gogo = myPosi;
                 /*if tileS=0 or bigger than 0 and lover than 8 (your soilder)
@@ -1194,16 +1221,25 @@ public class battleScript : MonoBehaviour
                 {
                     if (int.Parse(tileS[(myPosi - 1)]) < 8)
                     {
-                        if (tileS[(myPosi - 1)] == "0" && move > 0 && distance1 > (posi - (myPosi - 1)) && (posi - (myPosi - 1)) > 0 && (myPosi / 8) == ((myPosi - 1) / 8))
+                        if (tileS[(myPosi - 1)] == "0" && move > 0 && distance1 > Mathf.Abs((posi - (myPosi - 1))) &&  (myPosi / 8) == ((myPosi - 1) / 8))
                         {
-                            distance1 = posi - (myPosi - 1);
+                            distance1 = Mathf.Abs(posi - (myPosi - 1));
                             gogo = myPosi - 1;
                         }
-                       if(int.Parse(tileS[(myPosi - 1)])>0)
+                       if(int.Parse(tileS[(myPosi - 1)])>0 && (myPosi / 8) == ((myPosi - 1) / 8))
                         {
                             target = tileS[(myPosi - 1)];
                             enemyAttack = true;
                             break;
+                        }
+                       if(moveYourAss)
+                        {
+                            if (tileS[(myPosi - 1)] == "0" && move > 0  && (myPosi / 8) == ((myPosi - 1) / 8))
+                            {
+                                distance1 = Mathf.Abs(posi - (myPosi - 1));
+                                gogo = myPosi - 1;
+                                moveYourAss = false;
+                            }
                         }
                     }
                 }
@@ -1211,16 +1247,25 @@ public class battleScript : MonoBehaviour
                 {
                     if (int.Parse(tileS[(myPosi + 1)]) < 8 )
                     {
-                        if (tileS[(myPosi + 1)] == "0" && move > 0 && distance1 > (posi - (myPosi + 1)) && (posi - (myPosi + 1)) > 0 && (myPosi / 8) == ((myPosi + 1) / 8))
+                        if (tileS[(myPosi + 1)] == "0" && move > 0 && distance1 > Mathf.Abs((posi - (myPosi + 1)) ) && (myPosi / 8) == ((myPosi + 1) / 8))
                         {
-                            distance1 = posi - (myPosi + 1);
+                            distance1 = Mathf.Abs(posi - (myPosi + 1));
                             gogo = myPosi + 1;
                         }
-                        if (int.Parse(tileS[(myPosi + 1)])>0)
+                        if (int.Parse(tileS[(myPosi + 1)])>0 && (myPosi / 8) == ((myPosi + 1) / 8))
                         {
                             target = tileS[(myPosi + 1)];
                             enemyAttack = true;
                             break;
+                        }
+                        if (moveYourAss)
+                        {
+                            if (tileS[(myPosi + 1)] == "0" && move > 0  && (myPosi / 8) == ((myPosi + 1) / 8))
+                            {
+                                distance1 = Mathf.Abs(posi - (myPosi + 1));
+                                gogo = myPosi + 1;
+                                moveYourAss = false;
+                            }
                         }
                     }
                 }
@@ -1228,9 +1273,9 @@ public class battleScript : MonoBehaviour
                 {
                     if (int.Parse(tileS[(myPosi + 8)]) < 8 )
                     {
-                        if (tileS[(myPosi + 8)] == "0" && move > 0 && distance1 > (posi - (myPosi + 8)) && (posi - (myPosi + 8)) > 0)
+                        if (tileS[(myPosi + 8)] == "0" && move > 0 && distance1 > Mathf.Abs((posi - (myPosi + 8))))
                         {
-                            distance1 = posi - (myPosi + 8);
+                            distance1 = Mathf.Abs(posi - (myPosi + 8));
                             gogo = myPosi + 8;
                         }
                         if (int.Parse(tileS[(myPosi + 8)])>0)
@@ -1239,15 +1284,24 @@ public class battleScript : MonoBehaviour
                             enemyAttack = true;
                             break;
                         }
+                        if (moveYourAss)
+                        {
+                            if (tileS[(myPosi + 8)] == "0" && move > 0  && (myPosi / 8) == ((myPosi + 8) / 8))
+                            {
+                                distance1 = Mathf.Abs(posi - (myPosi + 8));
+                                gogo = myPosi + 8;
+                                moveYourAss = false;
+                            }
+                        }
                     }
                 }
                 if ((myPosi - 8) > -1)
                 {
                     if (int.Parse(tileS[(myPosi - 8)]) < 8 )
                     {
-                        if (tileS[(myPosi - 8)] == "0" && move > 0 && distance1 > (posi - (myPosi - 8)) && (posi - (myPosi - 8)) > 0)
+                        if (tileS[(myPosi - 8)] == "0" && move > 0 && distance1 > Mathf.Abs((posi - (myPosi - 8))) )
                         {
-                            distance1 = posi - (myPosi - 8);
+                            distance1 = Mathf.Abs(posi - (myPosi - 8));
                             gogo = myPosi - 8;
 
                         }
@@ -1257,17 +1311,31 @@ public class battleScript : MonoBehaviour
                             enemyAttack = true;
                             break;
                         }
+                        if (moveYourAss)
+                        {
+                            if (tileS[(myPosi - 8)] == "0" && move > 0  && (myPosi / 8) == ((myPosi - 8) / 8))
+                            {
+                                distance1 = Mathf.Abs(posi - (myPosi - 8));
+                                gogo = myPosi - 8;
+                                moveYourAss = false;
+                            }
+                        }
                     }
                 }
-
+                if(gogo==myPosi)
+                {
+                    move++;
+                    moveYourAss = true;
+                    stop++;
+                }
                 string tileName = "simpleTile" + gogo;
-                enemys[0].transform.position = GameObject.Find(tileName).GetComponent<Renderer>().bounds.center - new Vector3(0, 0, 0.1f);
+                enemys[enemy].transform.position = GameObject.Find(tileName).GetComponent<Renderer>().bounds.center - new Vector3(0, 0, 0.1f);
                 move--;
                 tileS[myPosi] = "0";
                 tileSLocal[myPosi] = "0";
                 GameModel[myPosi / 8, myPosi % 8] = "0";
-                tileS[gogo] = "8";
-                tileSLocal[gogo] = "8";
+                tileS[gogo] = search;
+                tileSLocal[gogo] = search;
                 GameModel[gogo / 8, gogo % 8] = shortName;
                 myPosi = gogo;
 
@@ -1367,6 +1435,7 @@ public class battleScript : MonoBehaviour
                 tileS[i] = "0";
                 tileSLocal[i] = "0";
                 GameModel[i / 8, i % 8] = "0";
+                searched = false;
                 break;
             }
         }
@@ -1379,55 +1448,26 @@ public class battleScript : MonoBehaviour
         int posi = 0;
         for (int i = 0; i < 64; i++)
         {
-            if (tileS[i] == "3")
+            if (int.Parse(tileS[i])<8 && int.Parse(tileS[i]) > 1)
             {
-                returna = returna+"3,";
+                returna = returna+ tileS[i]+",";
                 returna = returna+i+",";
-            }
-            if (tileS[i] == you)
-            {
-                posi= i;
+                break;
             }
         }
-        if (returna.Length == 0)
-        {
+       
             for (int i = 0; i < 64; i++)
             {
-                if (tileS[i] == "2")
-                {
-                    returna = returna + "2,";
-                    returna = returna + i + ",";
-                    break;
-                }
-                if (tileS[i] == "4")
-                {
-                    returna = returna + "4,";
-                    returna = returna + i + ",";
-                    break;
-                }
-                if (tileS[i] == "5")
-                {
-                    returna = returna + "5,";
-                    returna = returna + i + ",";
-                    break;
-                }
-                if (tileS[i] == "6")
-                {
-                    returna = returna + "6,";
-                    returna = returna + i + ",";
-                    break;
-                }
-                if (tileS[i] == "7")
-                {
-                    returna = returna + "7,";
-                    returna = returna + i + ",";
-                    break;
-                }
+            if (tileS[i] == you)
+            {
+                posi = i;
+                break;
             }
         }
         returna = returna + posi + ",";
         return returna;
     }
+   
     //Play sound delayed
     IEnumerator Solder1Die(AudioClip clip)
     {
@@ -1474,7 +1514,7 @@ public class battleScript : MonoBehaviour
         {
         if (globalSlots.slot7I > 0)//if the enemy is more than 0
         {
-            MoveEnemy(6,"8");
+            MoveEnemy(6,"8",0);
             enemys[0].AddComponent<AudioSource>();
             enemys[0].GetComponent<AudioSource>().volume = 0.15f;
             enemys[0].GetComponent<AudioSource>().enabled = false;
@@ -1494,7 +1534,7 @@ public class battleScript : MonoBehaviour
             if (globalSlots.slot8I > 0)//if the enemy is more than 0
         {
                 //declarate the main variable
-            MoveEnemy(7, "9");
+            MoveEnemy(7, "9",1);
             enemys[1].AddComponent<AudioSource>();
             enemys[1].GetComponent<AudioSource>().volume = 0.15f;
             enemys[1].GetComponent<AudioSource>().enabled = false;
@@ -1514,7 +1554,7 @@ public class battleScript : MonoBehaviour
         {
         if (globalSlots.slot9I > 0)//if the enemy is more than 0
         {
-            MoveEnemy(8, "9");
+            MoveEnemy(8, "10",2);
             enemys[2].AddComponent<AudioSource>();
             enemys[2].GetComponent<AudioSource>().volume = 0.15f;
             enemys[2].GetComponent<AudioSource>().enabled = false;

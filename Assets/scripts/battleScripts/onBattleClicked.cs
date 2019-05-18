@@ -16,7 +16,7 @@ public class onBattleClicked : MonoBehaviour
                 GameObject.Find("Knight").GetComponent<AudioSource>().clip = battleScript.leny[0].aud3;
                 GameObject.Find("Knight").GetComponent<AudioSource>().enabled = true;
                 GameObject.Find("youStat").GetComponent<Text>().text =
-                battleScript.leny[0].name + "(" + globalSlots.slot1I + ")\n HP: " + battleScript.leny[0].ahealt + " (" + battleScript.leny[0].healt + ")\n" + "DMG: " + battleScript.leny[0].admg + " (" + battleScript.leny[0].dmg + ")";
+                battleScript.leny[0].name + "(" + globalSlots.slot1I + ")\n HP: " + battleScript.leny[0].ahealt + " (" + battleScript.leny[0].ahealt* globalSlots.slot1I + ")\n" + "DMG: " + battleScript.leny[0].admg + " (" + battleScript.leny[0].admg * globalSlots.slot1I + ")";
 
                 if (battleScript.round == 1)
                 {
@@ -27,14 +27,14 @@ public class onBattleClicked : MonoBehaviour
                 }
             
         }
-            if (this.name=="Archer")
+        if (this.name=="Archer")
         {
            
                 GameObject.Find("Archer").GetComponent<AudioSource>().enabled=false;
                 GameObject.Find("Archer").GetComponent<AudioSource>().clip = battleScript.leny[1].aud3;
                 GameObject.Find("Archer").GetComponent<AudioSource>().enabled = true;
                 GameObject.Find("youStat").GetComponent<Text>().text=
-               battleScript.leny[1].name+"("+globalSlots.slot2I+")\n HP: "+ battleScript.leny[1].ahealt+" ("+ battleScript.leny[1].healt+")\n"+"DMG: "+ battleScript.leny[1].admg+" ("+ battleScript.leny[1].dmg+")";
+               battleScript.leny[1].name+"("+globalSlots.slot2I+")\n HP: "+ battleScript.leny[1].ahealt+" ("+ battleScript.leny[1].ahealt* globalSlots.slot2I + ")\n"+"DMG: "+ battleScript.leny[1].admg+" ("+ battleScript.leny[1].admg* globalSlots.slot2I + ")";
                 if (battleScript.round == 2)
                 {
                     getLepes(globalSlots.slot2T, battleScript.leny[1].move);
@@ -47,10 +47,10 @@ public class onBattleClicked : MonoBehaviour
         {
             
                 GameObject.Find("enemyStat").GetComponent<Text>().text=
-                battleScript.leny[6].name+"("+globalSlots.slot7I+")\n HP: "+ battleScript.leny[6].ahealt+" ("+ battleScript.leny[6].healt+")\n"+"DMG: "+ battleScript.leny[6].admg+" ("+ battleScript.leny[6].dmg+")";
+                battleScript.leny[6].name+"("+globalSlots.slot7I+")\n HP: "+ battleScript.leny[6].ahealt+" ("+ battleScript.leny[6].ahealt * battleScript.leny[6].db + ")\n"+"DMG: "+ battleScript.leny[6].admg+" ("+ battleScript.leny[6].admg * battleScript.leny[6].db + ")";
                 if (battleScript.notInfo)
                 {
-                    attackLeny(battleScript.leny[6].name, battleScript.leny[6].healt, globalSlots.slot7I, "8");
+                    attackLeny(battleScript.leny[6].name, battleScript.leny[6].ahealt, globalSlots.slot7I, "8");
                 }
             
         }
@@ -59,10 +59,10 @@ public class onBattleClicked : MonoBehaviour
            
                 
                 GameObject.Find("enemyStat").GetComponent<Text>().text=
-                battleScript.leny[7].name+"("+globalSlots.slot8I+")\n HP: "+ battleScript.leny[7].ahealt+" ("+ battleScript.leny[7].healt+")\n"+"DMG: "+ battleScript.leny[7].admg+" ("+ battleScript.leny[7].dmg+")";
+                battleScript.leny[7].name+"("+globalSlots.slot8I+")\n HP: "+ battleScript.leny[7].ahealt+" ("+ battleScript.leny[7].ahealt* battleScript.leny[7].db + ")\n"+"DMG: "+ battleScript.leny[7].admg+" ("+ battleScript.leny[7].admg * battleScript.leny[7].db + ")";
                 if (battleScript.notInfo)
                 {
-                    attackLeny(battleScript.leny[7].name, battleScript.leny[7].healt, globalSlots.slot8I, "9");
+                    attackLeny(battleScript.leny[7].name, battleScript.leny[7].ahealt, globalSlots.slot8I, "9");
                 }
             
         }
@@ -70,10 +70,10 @@ public class onBattleClicked : MonoBehaviour
         {
            
                 GameObject.Find("enemyStat").GetComponent<Text>().text=
-                battleScript.leny[8].name+"("+globalSlots.slot9I+")\n HP: "+ battleScript.leny[8].ahealt+" ("+ battleScript.leny[8].healt+")\n"+"DMG: "+ battleScript.leny[8].admg+" ("+ battleScript.leny[8].dmg+")";
+                battleScript.leny[8].name+"("+globalSlots.slot9I+")\n HP: "+ battleScript.leny[8].ahealt+" ("+ battleScript.leny[8].ahealt * battleScript.leny[8].db + ")\n"+"DMG: "+ battleScript.leny[8].admg+" ("+ battleScript.leny[8].admg* battleScript.leny[8].db + ")";
                 if (battleScript.notInfo)
                 {
-                    attackLeny(battleScript.leny[8].name, battleScript.leny[8].healt, globalSlots.slot9I, "10");
+                    attackLeny(battleScript.leny[8].name, battleScript.leny[8].ahealt, globalSlots.slot9I, "10");
                 }
             
         }
@@ -171,14 +171,16 @@ public class onBattleClicked : MonoBehaviour
             int dmg = 0;
             int admg = 0;
             bool critical = false;
-            int ahealt = healt / db;
+            int ahealt = healt * db;
+            healt = ahealt;
+            ahealt = healt / db;
             if (globalSlots.oneSelected)
             {
-                    dmg = battleScript.leny[0].dmg;
+                    dmg = battleScript.leny[0].admg* battleScript.leny[0].db;
             }
             if (globalSlots.twoSelected)
             {
-                dmg = battleScript.leny[1].dmg;  
+                dmg = battleScript.leny[1].admg * battleScript.leny[1].db;  
             }
             //it is critick?    
             int crit = Random.Range(1, 10);
@@ -209,26 +211,32 @@ public class onBattleClicked : MonoBehaviour
                 if (slot == "8")
                 {
                     globalSlots.slot7I = remaining;
+                    battleScript.leny[6].db = remaining;
                 }
                 if (slot == "9")
                 {
                     globalSlots.slot8I = remaining;
+                    battleScript.leny[7].db = remaining;
                 }
                 if (slot == "10")
                 {
                     globalSlots.slot9I = remaining;
+                    battleScript.leny[8].db = remaining;
                 }
                 if (slot == "11")
                 {
                     globalSlots.slot10I = remaining;
+                    battleScript.leny[9].db = remaining;
                 }
                 if (slot == "12")
                 {
                     globalSlots.slot11I = remaining;
+                    battleScript.leny[10].db = remaining;
                 }
                 if (slot == "13")
                 {
                     globalSlots.slot12I = remaining;
+                    battleScript.leny[11].db = remaining;
                 }
                 string critS = "";
                 if (critical)
@@ -270,7 +278,7 @@ public class onBattleClicked : MonoBehaviour
                     GameObject.Find("enemy6").SetActive(false);
                     globalSlots.slot12I = 0;
                 }
-                GameObject.Find("youStat").GetComponent<Text>().text = "You killed the " + name;
+                GameObject.Find("youStat").GetComponent<Text>().text = "You make " + admg + " and killed the " + name;
             }
             goThere(slot,die);
         }
@@ -345,7 +353,7 @@ public class onBattleClicked : MonoBehaviour
         attack = false;
     }
     IEnumerator dieCreature(string where) {
-        yield return new WaitForSeconds(.6f);
+        yield return new WaitForSeconds(1.5f);
             if (where == "8")
         {
             GameObject.Find("enemy1").SetActive(false);

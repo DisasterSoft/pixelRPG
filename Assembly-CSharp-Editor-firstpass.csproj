@@ -344,6 +344,18 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
+    <Reference Include="Google.IOSResolver_v1.2.102.0">
+      <HintPath>D:/Android repok/pixelRPG/Assets/PlayServicesResolver/Editor/Google.IOSResolver_v1.2.102.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.JarResolver_v1.2.102.0">
+      <HintPath>D:/Android repok/pixelRPG/Assets/PlayServicesResolver/Editor/Google.JarResolver_v1.2.102.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.VersionHandler">
+      <HintPath>D:/Android repok/pixelRPG/Assets/PlayServicesResolver/Editor/Google.VersionHandler.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.VersionHandlerImpl_v1.2.102.0">
+      <HintPath>D:/Android repok/pixelRPG/Assets/PlayServicesResolver/Editor/Google.VersionHandlerImpl_v1.2.102.0.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>D:/Android repok/pixelRPG/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
     </Reference>

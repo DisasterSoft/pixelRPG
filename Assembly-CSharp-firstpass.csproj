@@ -76,6 +76,8 @@
     <Compile Include="Assets\plugins\LeoLuz\Virtual Plug and Play Joystick\Scripts\Swipe.cs" />
     <Compile Include="Assets\plugins\LeoLuz\Virtual Plug and Play Joystick\Scripts\UIButtonToAxis.cs" />
     <Compile Include="Assets\plugins\LeoLuz\Virtual Plug and Play Joystick\Scripts\UIButtonToButton.cs" />
+    <None Include="Assets\plugins\Android\GoogleMobileAdsPlugin\new 2.xml" />
+    <None Include="Assets\plugins\Android\GoogleMobileAdsPlugin\AndroidManifest.xml" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/Android repok/pixelRPG/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
