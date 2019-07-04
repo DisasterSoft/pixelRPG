@@ -206,11 +206,11 @@ public class battleScript : MonoBehaviour
         }
         if(numberOfEnemy<1)
         {
-            if (globalVariable.isloaded == false)
+            if (sqlCreate.getData("loaded") == "0")
             {
                 flowchart.SendFungusMessage("youWin");
                 globalMoney.setMoney(givingMoney);
-                globalVariable.isloaded = true;
+                sqlCreate.setData("loaded","1");
             }
         }
         whereTogo1 = whereTogo;
@@ -1398,12 +1398,14 @@ public class battleScript : MonoBehaviour
                 + " dmg\n " + (db - survival) + " " + name + " die!";
             if(target=="2")
             {
-                globalSlots.slot1I = survival;
+                globalSlots.setSlot1(survival);
+                sqlCreate.setData("slot1I", survival.ToString());
                 leny[0].db = survival;
             }
             if (target=="3")
             {
-                globalSlots.slot2I = survival;
+                globalSlots.setSlot2(survival);
+                sqlCreate.setData("slot2I", survival.ToString());
                 leny[1].db = survival;
             }
         }
@@ -1412,13 +1414,13 @@ public class battleScript : MonoBehaviour
             GameObject.Find("enemyStat").GetComponent<Text>().text = lenyName + " attacked you, and killed all "+name+"'s";
             if (target == "2")
             {
-                globalSlots.slot1I = 0;
+                globalSlots.setSlot1(0);
                 solders[0].GetComponent<Animator>().SetBool("Live", false);
                 StartCoroutine(Solder1Die(leny[0].aud3));
             }
             if (target == "3")
             {
-                globalSlots.slot2I = 0;
+                globalSlots.setSlot2(0);
                 solders[1].GetComponent<Animator>().SetBool("Live", false);
                 StartCoroutine(Solder2Die(leny[1].aud3));
             }

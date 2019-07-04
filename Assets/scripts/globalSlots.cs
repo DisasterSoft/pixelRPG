@@ -19,11 +19,28 @@ public class globalSlots : MonoBehaviour
     public static bool sixSelected=false;
     void Start()
     {
-        if (globalVariable.isloaded == false)
+        if (sqlCreate.getData("loaded") == "1")
         {
-            slot1I = slot2I = slot3I = slot4I = slot5I = slot6I = slot7I = slot8I = slot9I = slot10I = slot11I = slot12I = 0;
+
+            slot1I = int.Parse(sqlCreate.getData("slot1I"));
+            slot2I = int.Parse(sqlCreate.getData("slot2I"));
+            slot3I = int.Parse(sqlCreate.getData("slot3I"));
+            slot4I = int.Parse(sqlCreate.getData("slot4I"));
+            slot5I = int.Parse(sqlCreate.getData("slot5I"));
+            slot6I = int.Parse(sqlCreate.getData("slot6I"));
+            slot1T = sqlCreate.getData("slot1T");
+            slot2T = sqlCreate.getData("slot2T");
+            slot3T = sqlCreate.getData("slot3T");
+            slot4T = sqlCreate.getData("slot4T");
+            slot5T = sqlCreate.getData("slot5T");
+            slot6T = sqlCreate.getData("slot6T"); 
+            slot7I = slot8I = slot9I = slot10I = slot11I = slot12I = 0;
         }
+        else
+        {
+            slot1I = slot2I = slot4I = slot5I = slot5I = slot6I= slot7I = slot8I = slot9I = slot10I = slot11I = slot12I = 0;
         }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -31,26 +48,80 @@ public class globalSlots : MonoBehaviour
         slot1Ib = slot1I;
         slot2.GetComponent<Text>().text = slot2I.ToString();
         slot2Ib = slot2I;
+        slot3.GetComponent<Text>().text = slot3I.ToString();
+        slot3Ib = slot3I;
     }
-    public  void setSlot1(int db)
+    public static void setSlot1(int db)
     {
         slot1I = db;
+        sqlCreate.setData("slot1I", db.ToString());
        
     }
-    public  void setSlot1Type(string db)
+    public static void setSlot1Type(string db)
     {
         slot1T = db;
-       
+        sqlCreate.setData("slot1T", db);
+
     }
-    public  void setSlot2(int db)
+    public static void setSlot2(int db)
     {
         slot2I = db;
-       
+        sqlCreate.setData("slot2I", db.ToString());
+
     }
-    public  void setSlot2Type(string db)
+    public static void setSlot2Type(string db)
     {
         slot2T = db;
-       
+        sqlCreate.setData("slot2T", db);
+
+    }
+    public static void setSlot3(int db)
+    {
+        slot3I = db;
+        sqlCreate.setData("slot3I", db.ToString());
+
+    }
+    public static void setSlot3Type(string db)
+    {
+        slot3T = db;
+        sqlCreate.setData("slot3T", db);
+
+    }
+    public static void setSlot4(int db)
+    {
+        slot3I = db;
+        sqlCreate.setData("slot4I", db.ToString());
+
+    }
+    public static  void setSlot4Type(string db)
+    {
+        slot3T = db;
+        sqlCreate.setData("slot4T", db);
+
+    }
+    public static  void setSlot5(int db)
+    {
+        slot3I = db;
+        sqlCreate.setData("slot5I", db.ToString());
+
+    }
+    public static  void setSlot5Type(string db)
+    {
+        slot3T = db;
+        sqlCreate.setData("slot5T", db);
+
+    }
+    public static void setSlot6(int db)
+    {
+        slot3I = db;
+        sqlCreate.setData("slot6I", db.ToString());
+
+    }
+    public static void setSlot6Type(string db)
+    {
+        slot3T = db;
+        sqlCreate.setData("slot6T", db);
+
     }
     public  void setSlot7DB(int db)
     {

@@ -54,6 +54,8 @@ public class archer1Script1 : MonoBehaviour
             globalMoney.moneyI -= amount;
             flowchart.SetBooleanVariable("Archerpayed",true);
             globalVariable.addObjectToList("archer1");
+            globalSlots.setSlot2(30);
+            globalSlots.setSlot2Type("ar");
         }
         else
         {

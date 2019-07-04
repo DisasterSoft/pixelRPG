@@ -15,6 +15,11 @@ public class knightScripts : MonoBehaviour
         flowchart.SendFungusMessage("knight1");
        
     }
+    public void setKnight()
+    {
+        globalSlots.setSlot1(40);
+        globalSlots.setSlot1Type("k");
+    }
 }
 
 

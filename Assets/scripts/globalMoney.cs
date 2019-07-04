@@ -9,9 +9,13 @@ public class globalMoney : MonoBehaviour
     public static int moneyI = 0;
     public void Start()
     {
-        if(globalVariable.isloaded)
+        if (sqlCreate.getData("loaded")=="1")
         {
-            moneyI = globalVariable.money;
+            moneyI = int.Parse(sqlCreate.getData("Money"));
+            if (GameObject.Find("moneySlot") != null)
+            {
+                GameObject.Find("moneySlot").SetActive(true);
+            }
         }
     }
     // Update is called once per frame
@@ -21,19 +25,21 @@ public class globalMoney : MonoBehaviour
     }
     public static void setMoney(int db)
     {
-
         moneyI += db;
         globalVariable.money = moneyI;
+        sqlCreate.setData("Money",moneyI.ToString());
     }
     public  void setMoney1(int db)
     {
         moneyI += db;
         globalVariable.money = moneyI;
+        sqlCreate.setData("Money", moneyI.ToString());
     }
     public void giveMoney(int db)
     {
 
         moneyI -= db;
         globalVariable.money = moneyI;
+        sqlCreate.setData("Money", moneyI.ToString());
     }
 }

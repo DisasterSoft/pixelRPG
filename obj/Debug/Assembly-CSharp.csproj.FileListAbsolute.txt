@@ -284,3 +284,5 @@ D:\Android repok\pixelRPG\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cac
 D:\Android repok\pixelRPG\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 D:\Android repok\pixelRPG\obj\Debug\Assembly-CSharp.dll
 D:\Android repok\pixelRPG\obj\Debug\Assembly-CSharp.pdb
+D:\Android repok\pixelRPG\Temp\bin\Debug\UnityEngine.Advertisements.Editor.dll
+D:\Android repok\pixelRPG\Temp\bin\Debug\UnityEngine.Monetization.Editor.dll

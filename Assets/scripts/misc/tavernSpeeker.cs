@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Fungus;
-
+using UnityEngine.SceneManagement;
 
 public class tavernSpeeker : MonoBehaviour
 {
@@ -12,6 +12,9 @@ public class tavernSpeeker : MonoBehaviour
     public int barkeeperCount = 0;
     public int damiCount = 0;
     public int thingCount = 0;
+    public int zsigiCount1 = 0;
+    public int archerCount = 0;
+   
    
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -106,8 +109,63 @@ public class tavernSpeeker : MonoBehaviour
         {
             flowchart.SendFungusMessage("Wacy");
         }
-
+        if (this.name == "knight")
+        {
+            if (zsigiCount1 == 0)
+            {
+                flowchart.SetIntegerVariable("Money", globalMoney.moneyI);
+                flowchart.SendFungusMessage("knight");
+            }
         }
-   
+
+        if (this.name == "Archer")
+        {
+            if (archerCount == 0)
+            {
+                flowchart.SetIntegerVariable("Money", globalMoney.moneyI);
+                flowchart.SendFungusMessage("Archer");
+            }
+        }
+        if (this.name == "assasin")
+        {
+           
+               
+                flowchart.SendFungusMessage("assasin");
+           
+        }
+        if (this.name == "exit")
+        {
+
+
+            flowchart.SendFungusMessage("exit");
+            int givingMoney = globalMoney.moneyI;
+            globalMoney.setMoney(givingMoney);
+            globalVariable.isloaded = true;
+        }
+
+    }
+    public void knighCountInc()
+    {
+        this.zsigiCount1++;
+        globalVariable.addObjectToList("knight");
+    }
+    public void archerCountInc()
+    {
+       this.archerCount++;
+        globalVariable.addObjectToList("Archer");
+    }
+    public void addAssasin()
+    {
+        globalVariable.addObjectToList("assasin");
+        globalVariable.setPlayerCoord();
+        globalVariable.setCard("c1");
+    }
+    IEnumerator loadSceene()
+    {
+        yield return new WaitForSeconds(0.1f);
+       
+
+    }
+
 
 }
