@@ -38,7 +38,7 @@ public class globalVariable : MonoBehaviour
         {
             if(loadCount==0)
             {
-              sqlCreate.newStart();
+             // sqlCreate.newStart();
             }
         }
         if (loadCount==0)

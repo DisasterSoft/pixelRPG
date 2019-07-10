@@ -10,8 +10,8 @@ public class sqlCreate : MonoBehaviour
     {
         //dbPath = "URI=file:" + Application.persistentDataPath + "/WalkDating.db";
         //Debug.Log(Application.streamingAssetsPath);
-        dbPath = "URI=file:" + Application.streamingAssetsPath + "/Worewen.db";
-        CreateSchema();
+        dbPath = "URI=file:" + Application.persistentDataPath + "/Worewen.db";
+       // CreateSchema();
         /*InsertScore("GG Meade", 3701);
         InsertScore("US Grant", 4242);
         InsertScore("GB McClellan", 107);

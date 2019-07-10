@@ -250,7 +250,7 @@ namespace Fungus
             }
             else if (Input.GetMouseButton(0)) 
             {
-                delta = (Vector3)Input.mousePosition - previousMousePos;
+                delta = Input.mousePosition - previousMousePos;
                 previousMousePos = Input.mousePosition;
             }
 
