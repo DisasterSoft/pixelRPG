@@ -9,37 +9,49 @@ public class globalMoney : MonoBehaviour
     public static int moneyI = 0;
     public void Start()
     {
-        if (sqlCreate.getData("loaded")=="1")
+        /*if (sqlCreate.getData("loaded")=="1")
         {
             moneyI = int.Parse(sqlCreate.getData("Money"));
             if (GameObject.Find("moneySlot") != null)
             {
                 GameObject.Find("moneySlot").SetActive(true);
             }
-        }
+        }*/
     }
     // Update is called once per frame
     void Update()
     {
         money.GetComponent<Text>().text = moneyI.ToString();
     }
-    public static void setMoney(int db)
+    public static void setMoney(int dbk)
     {
-        moneyI += db;
+        moneyI += dbk;
         globalVariable.money = moneyI;
-        sqlCreate.setData("Money",moneyI.ToString());
+        db.addThingToList(14, moneyI.ToString());
     }
-    public  void setMoney1(int db)
+    public  void setMoney1(int dbk)
     {
-        moneyI += db;
+        moneyI = int.Parse(db.readTheData(14));
+        moneyI += dbk;
         globalVariable.money = moneyI;
-        sqlCreate.setData("Money", moneyI.ToString());
+        db.addThingToList(14, moneyI.ToString());
     }
-    public void giveMoney(int db)
+    public void giveMoney(int dbk)
     {
-
-        moneyI -= db;
+        moneyI = int.Parse(db.readTheData(14));
+        Debug.Log(moneyI + "befor");
+        moneyI -= dbk;
         globalVariable.money = moneyI;
-        sqlCreate.setData("Money", moneyI.ToString());
+        Debug.Log(moneyI + "after");
+        db.addThingToList(14, moneyI.ToString());
+    }
+    public static void giveMoney1(int dbk)
+    {
+        moneyI = int.Parse(db.readTheData(14));
+        Debug.Log(moneyI + "befor");
+        moneyI -= dbk;
+        globalVariable.money = moneyI;
+        Debug.Log(moneyI + "after");
+        db.addThingToList(14, moneyI.ToString());
     }
 }

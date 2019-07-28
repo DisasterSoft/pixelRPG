@@ -627,16 +627,21 @@
     <Compile Include="Assets\scripts\cameraSript.cs" />
     <Compile Include="Assets\scripts\cardScript.cs" />
     <Compile Include="Assets\scripts\charackters\archer1Script1.cs" />
+    <Compile Include="Assets\scripts\charackters\assasinScript1.cs" />
     <Compile Include="Assets\scripts\charackters\dancer1Script.cs" />
     <Compile Include="Assets\scripts\charackters\knightScripts.cs" />
     <Compile Include="Assets\scripts\charackters\knightScripts1.cs" />
     <Compile Include="Assets\scripts\charackters\langolofa.cs" />
     <Compile Include="Assets\scripts\charackters\player_controller.cs" />
+    <Compile Include="Assets\scripts\database\db.cs" />
     <Compile Include="Assets\scripts\enemys\blueImp.cs" />
     <Compile Include="Assets\scripts\enemys\creatureScript.cs" />
     <Compile Include="Assets\scripts\enemys\impScript1.cs" />
     <Compile Include="Assets\scripts\enemys\redImp.cs" />
     <Compile Include="Assets\scripts\enemys\wolftScript.cs" />
+    <Compile Include="Assets\scripts\enemys\zombie.cs" />
+    <Compile Include="Assets\scripts\enemys\zombieGirl.cs" />
+    <Compile Include="Assets\scripts\enemys\zombieScript1.cs" />
     <Compile Include="Assets\scripts\globalMoney.cs" />
     <Compile Include="Assets\scripts\globalQuest.cs" />
     <Compile Include="Assets\scripts\globalSlots.cs" />
@@ -650,7 +655,6 @@
     <Compile Include="Assets\scripts\misc\tavernBlocked.cs" />
     <Compile Include="Assets\scripts\misc\tavernSpeeker.cs" />
     <Compile Include="Assets\scripts\misc\wishps.cs" />
-    <Compile Include="Assets\scripts\sql\sqlCreate.cs" />
     <Compile Include="Assets\TouchJoysticks\Scripts\DualJoystickPlayerController.cs" />
     <Compile Include="Assets\TouchJoysticks\Scripts\DualJoystickTouchContoller.cs" />
     <Compile Include="Assets\TouchJoysticks\Scripts\LeftJoystick.cs" />
@@ -717,29 +721,23 @@
     <None Include="Assets\FungusExamples\FirstPerson\Visuals\Google Poly\Door\CC-BY.txt" />
     <None Include="Assets\Fungus\Thirdparty\TextMeshPro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\Fungus\Docs\CHANGELOG.txt" />
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/Android repok/pixelRPG/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>D:/Android repok/pixelRPG/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>D:/Android repok/pixelRPG/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/Android repok/pixelRPG/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>D:/Android repok/pixelRPG/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Android repok/pixelRPG/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.multiplayer-hlapi.Editor">
       <HintPath>D:/Android repok/pixelRPG/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>D:/Android repok/pixelRPG/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.PackageManagerUI.Editor">
+      <HintPath>D:/Android repok/pixelRPG/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>D:/Android repok/pixelRPG/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.CollabProxy.Editor">
+      <HintPath>D:/Android repok/pixelRPG/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.multiplayer-weaver.Editor">
       <HintPath>D:/Android repok/pixelRPG/Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll</HintPath>
@@ -752,6 +750,12 @@
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>D:/Android repok/pixelRPG/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>D:/Android repok/pixelRPG/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.DataPrivacy">
+      <HintPath>D:/Android repok/pixelRPG/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.XR.LegacyInputHelpers">
       <HintPath>D:/Android repok/pixelRPG/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
@@ -938,12 +942,6 @@
     </Reference>
     <Reference Include="Vuforia.UnityExtensions">
       <HintPath>D:/unity2/2019.1.3f1/Editor/Data/PlaybackEngines/VuforiaSupport/Managed/Runtime/Vuforia.UnityExtensions.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Data.Sqlite">
-      <HintPath>D:/Android repok/pixelRPG/Assets/plugins/Mono.Data.Sqlite.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Data.SqliteClient">
-      <HintPath>D:/Android repok/pixelRPG/Assets/plugins/Mono.Data.SqliteClient.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Advertisements.Editor">
       <HintPath>D:/Android repok/pixelRPG/Assets/UnityAds/UnityEngine.Advertisements.Editor.dll</HintPath>

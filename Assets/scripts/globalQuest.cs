@@ -4,26 +4,41 @@ using UnityEngine;
 
 public class globalQuest : MonoBehaviour
 {
-    public static int[] quest= new int[10];
-    public  bool questFill;
-    private void Start()
+    public  void setquestActive(int qID)
     {
-        if(questFill==false)
+        string quest = db.readTheData(19);
+        string[] quest_a = quest.Split(',');
+        string returnQuest="";
+        for(int i=0; i<quest_a.Length;i++)
         {
-            questFill = true;
-            for(int i=0;i>12;i++)
+            if(i==qID)
             {
-                quest[i] = 0;
+                returnQuest = returnQuest + "1,";
+            }
+            else
+            {
+                returnQuest = returnQuest + quest_a[i] + ",";
             }
         }
+        db.addThingToList(19, returnQuest);
     }
-    public static void setquestActive(int qID)
+    public  void setquestComplet(int qID)
     {
-        quest[qID] = 1;
-    }
-    public static void setquestComplet(int qID)
-    {
-        quest[qID] = 2;
+        string quest = db.readTheData(19);
+        string[] quest_a = quest.Split(',');
+        string returnQuest = "";
+        for (int i = 0; i < quest_a.Length; i++)
+        {
+            if (i == qID)
+            {
+                returnQuest = returnQuest + "2,";
+            }
+            else
+            {
+                returnQuest = returnQuest + quest_a[i] + ",";
+            }
+        }
+        db.addThingToList(19, returnQuest);
     }
 
 }

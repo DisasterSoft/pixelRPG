@@ -20,5 +20,11 @@ public class onTileClick : MonoBehaviour
             battleScript.moved = true;    
            
         }
+        if (globalSlots.threeSelected)
+        {
+            battleScript.whereTogo=this.name;
+            battleScript.moved = true;    
+           
+        }
     }
 }

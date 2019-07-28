@@ -123,29 +123,23 @@
     <Compile Include="Assets\Fungus\Thirdparty\Usfxr\Editor\SfxrGenerator.cs" />
     <Compile Include="Assets\Resources\Editor\CM Tools\TileMaster\TileMaster.cs" />
     <None Include="Assets\Resources\Editor\CM Tools\TileMasterReadme.txt" />
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/Android repok/pixelRPG/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>D:/Android repok/pixelRPG/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>D:/Android repok/pixelRPG/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/Android repok/pixelRPG/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>D:/Android repok/pixelRPG/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Android repok/pixelRPG/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.multiplayer-hlapi.Editor">
       <HintPath>D:/Android repok/pixelRPG/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>D:/Android repok/pixelRPG/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.PackageManagerUI.Editor">
+      <HintPath>D:/Android repok/pixelRPG/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>D:/Android repok/pixelRPG/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.CollabProxy.Editor">
+      <HintPath>D:/Android repok/pixelRPG/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.multiplayer-weaver.Editor">
       <HintPath>D:/Android repok/pixelRPG/Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll</HintPath>
@@ -158,6 +152,12 @@
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>D:/Android repok/pixelRPG/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>D:/Android repok/pixelRPG/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.DataPrivacy">
+      <HintPath>D:/Android repok/pixelRPG/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.XR.LegacyInputHelpers">
       <HintPath>D:/Android repok/pixelRPG/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
@@ -398,12 +398,6 @@
     </Reference>
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Data.Sqlite">
-      <HintPath>D:/Android repok/pixelRPG/Assets/plugins/Mono.Data.Sqlite.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Data.SqliteClient">
-      <HintPath>D:/Android repok/pixelRPG/Assets/plugins/Mono.Data.SqliteClient.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Advertisements.Editor">
       <HintPath>D:/Android repok/pixelRPG/Assets/UnityAds/UnityEngine.Advertisements.Editor.dll</HintPath>

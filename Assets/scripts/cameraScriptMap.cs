@@ -93,5 +93,12 @@ public class cameraScriptMap : MonoBehaviour
         _as.PlayOneShot(_as.clip);
 
     }
+    public static void playRaisOftheDeath()
+    {
+        _as.Stop();
+        _as.clip = musics[1];
+        _as.PlayOneShot(_as.clip);
+
+    }
 
 }

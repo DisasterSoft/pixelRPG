@@ -33,6 +33,18 @@ public class battleScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        globalSlots.slot1I = int.Parse(db.readTheData(2));
+        globalSlots.slot2I = int.Parse(db.readTheData(3));
+        globalSlots.slot3I = int.Parse(db.readTheData(4));
+        globalSlots.slot4I = int.Parse(db.readTheData(5));
+        globalSlots.slot5I = int.Parse(db.readTheData(6));
+        globalSlots.slot6I = int.Parse(db.readTheData(7));
+        globalSlots.slot1T = db.readTheData(8);
+        globalSlots.slot2T = db.readTheData(9);
+        globalSlots.slot3T = db.readTheData(10);
+        globalSlots.slot4T = db.readTheData(11);
+        globalSlots.slot5T = db.readTheData(12);
+        globalSlots.slot6T = db.readTheData(13);
         for (int i = 0; i < 64; i++)
         {
             TileModel[i] = GameObject.Find("simpleTile" + i);
@@ -44,9 +56,10 @@ public class battleScript : MonoBehaviour
                 GameModel[i, j] = "0";
                 tileS[j + (i * 8)]="0";
                 tileSLocal[j + (i * 8)]="0";
-                
+               
                 if (i == 0 && j == 7 && globalSlots.slot1I > 0)
                 {
+                    Debug.Log(globalSlots.slot1T);
                     numberOfTeam++;
                     if (globalSlots.slot1T == "k")
                     {
@@ -69,28 +82,51 @@ public class battleScript : MonoBehaviour
                         globalSlots.slot1x = j;
                         globalSlots.slot1y = i;
                 }
+                if (i == 1 && j == 7 && globalSlots.slot3I > 0)
+                {
+                    numberOfTeam++;
+                    if (globalSlots.slot3T == "as")
+                    {
+                        leny[2] = new creatureScript.CREATURE(2, 6, 3, "Assasin", "as", globalSlots.slot3I, "Sprites/assasin1", "audio/archersound1_OK", "audio/archersound1_DIE", "Animations/assasin", "audio/archersound1_KATT");
+                    }
+                    solders[2].AddComponent<Animator>();
+                    solders[2].AddComponent<AudioSource>();
+                    solders[2].GetComponent<AudioSource>().volume = 0.15f;
+                    solders[2].GetComponent<AudioSource>().enabled = false;
+                    RuntimeAnimatorController[] obj1 = Resources.LoadAll<RuntimeAnimatorController>(leny[2].anim);
+                    solders[2].GetComponent<Animator>().runtimeAnimatorController = obj1[0];
+                    Sprite[] obj = Resources.LoadAll<Sprite>(leny[2].pathSprite);
+                    solders[2].GetComponent<SpriteRenderer>().sprite = obj[5];
+                    solders[2].transform.position = (TileModel[j + (i * 8)].GetComponent<Renderer>().bounds.center) - new Vector3(0, 0, 0.1f);
+                    solders[2].SetActive(true);
+                    GameModel[i, j] = leny[2].sortName;
+                    tileS[j + (i * 8)] = "4";
+                    tileSLocal[j + (i * 8)] = "4";
+                    globalSlots.slot1x = j;
+                    globalSlots.slot1y = i;
+                }
                 if (i == 2 && j == 7 && globalSlots.slot2I > 0)
                 {
                     numberOfTeam++;
                     if (globalSlots.slot2T == "ar")
                     {
-                        leny[1] = new creatureScript.CREATURE(2, 2, 7, "Amazon Archer", "ar", globalSlots.slot2I, "Sprites/amazonArcher", "audio/archersound1_OK", "audio/archersound1_DIE", "Animations/archer1", "audio/archersound1_KATT");
+                        leny[1] = new creatureScript.CREATURE(2, 3, 7, "Amazon Archer", "ar", globalSlots.slot2I, "Sprites/amazonArcher", "audio/archersound1_OK", "audio/archersound1_DIE", "Animations/archer1", "audio/archersound1_KATT");
                     }
-                        solders[1].AddComponent<Animator>();
-                        solders[1].AddComponent<AudioSource>();
-                        solders[1].GetComponent<AudioSource>().volume = 0.15f;
-                        solders[1].GetComponent<AudioSource>().enabled = false;
-                        RuntimeAnimatorController[] obj1 = Resources.LoadAll<RuntimeAnimatorController>(leny[1].anim);
-                        solders[1].GetComponent<Animator>().runtimeAnimatorController = obj1[0];
-                        Sprite[] obj = Resources.LoadAll<Sprite>(leny[1].pathSprite);
-                        solders[1].GetComponent<SpriteRenderer>().sprite = obj[5];
-                        solders[1].transform.position = (TileModel[j + (i * 8)].GetComponent<Renderer>().bounds.center) - new Vector3(0, 0, 0.1f); ;
-                        solders[1].SetActive(true);
-                        GameModel[i, j] = leny[1].sortName;
-                        tileS[j + (i * 8)] = "3";
-                        tileSLocal[j + (i * 8)] = "3";
-                        globalSlots.slot2x = j;
-                        globalSlots.slot2y = i;
+                    solders[1].AddComponent<Animator>();
+                    solders[1].AddComponent<AudioSource>();
+                    solders[1].GetComponent<AudioSource>().volume = 0.15f;
+                    solders[1].GetComponent<AudioSource>().enabled = false;
+                    RuntimeAnimatorController[] obj1 = Resources.LoadAll<RuntimeAnimatorController>(leny[1].anim);
+                    solders[1].GetComponent<Animator>().runtimeAnimatorController = obj1[0];
+                    Sprite[] obj = Resources.LoadAll<Sprite>(leny[1].pathSprite);
+                    solders[1].GetComponent<SpriteRenderer>().sprite = obj[5];
+                    solders[1].transform.position = (TileModel[j + (i * 8)].GetComponent<Renderer>().bounds.center) - new Vector3(0, 0, 0.1f); ;
+                    solders[1].SetActive(true);
+                    GameModel[i, j] = leny[1].sortName;
+                    tileS[j + (i * 8)] = "3";
+                    tileSLocal[j + (i * 8)] = "3";
+                    globalSlots.slot2x = j;
+                    globalSlots.slot2y = i;
                 }
                 /* ide jön majd később a többi fajta ember ami a tied.
                 arra figyelni hogy a tileS 2-7 ig fog menni, viszont a solders az legalább 0-17 ig attól föggően milyen helyen milyen erősségű knightok vannak.*/
@@ -114,12 +150,24 @@ public class battleScript : MonoBehaviour
                         leny[6] = new creatureScript.CREATURE(1, 3, 1, "Wolf", "w1", globalSlots.slot7I, "Sprites/wolfsheet1", "audio/wolf1", "audio/wolf1Die", "Animations/wolfenemy1", "");
                         enemys[0].transform.localScale = new Vector3(2, 2, 2);
                     }
-
+                    if (globalSlots.slot7T == "z1")
+                    {
+                        leny[6] = new creatureScript.CREATURE(2, 3, 6, "Zombie", "z1", globalSlots.slot7I, "Sprites/zombie", "audio/mob2", "audio/mob2die", "Animations/zombie1", "");
+                        enemys[0].transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+                        enemys[0].transform.Rotate(0, 180, 0);
+                    }
+                    if (globalSlots.slot7T == "z2")
+                    {
+                        leny[6] = new creatureScript.CREATURE(3, 3, 7, "Zombie Girl", "z2", globalSlots.slot7I, "Sprites/zombieGirl", "audio/mob2", "audio/mob2die", "Animations/zombie2", "");
+                        enemys[0].transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+                        enemys[0].transform.Rotate(0, 180, 0);
+                    }
                     enemys[0].AddComponent<Animator>();
-                        RuntimeAnimatorController[] obj1 = Resources.LoadAll<RuntimeAnimatorController>(leny[6].anim);
+                    enemys[0].GetComponent<BoxCollider2D>().size = new Vector2(2.87f, 2.61f);
+                    RuntimeAnimatorController[] obj1 = Resources.LoadAll<RuntimeAnimatorController>(leny[6].anim);
                         enemys[0].GetComponent<Animator>().runtimeAnimatorController =obj1[0];
                         Sprite[] obj = Resources.LoadAll<Sprite>(leny[6].pathSprite);
-                        enemys[0].GetComponent<SpriteRenderer>().sprite = obj[5];
+                        enemys[0].GetComponent<SpriteRenderer>().sprite = obj[0];
                         enemys[0].transform.position = (TileModel[j + (i * 8)].GetComponent<Renderer>().bounds.center) - new Vector3(0, 0, 0.1f); ;
                         enemys[0].SetActive(true);
                         GameModel[i, j] = leny[6].sortName;
@@ -145,9 +193,21 @@ public class battleScript : MonoBehaviour
                         leny[7] = new creatureScript.CREATURE(1, 3, 1, "Wolf", "w1", globalSlots.slot8I, "Sprites/wolfsheet1", "audio/wolf1", "audio/wolf1Die", "Animations/wolfenemy1", "");
                         enemys[1].transform.localScale = new Vector3(2, 2, 2);
                     }
+                    if (globalSlots.slot8T == "z2")
+                    {
+                        leny[7] = new creatureScript.CREATURE(3, 3, 7, "Zombie Girl", "z2", globalSlots.slot8I, "Sprites/zombieGirl", "audio/mob2", "audio/mob2die", "Animations/zombie2", "");
+                        enemys[1].transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+                        enemys[1].transform.Rotate(0, 180, 0);
+                    }
+                    if (globalSlots.slot8T == "z1")
+                    {
+                        leny[7] = new creatureScript.CREATURE(2, 3, 6, "Zombie", "z1", globalSlots.slot8I, "Sprites/zombie", "audio/mob2", "audio/mob2die", "Animations/zombie1", "");
+                        enemys[1].transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+                        enemys[1].transform.Rotate(0, 180, 0);
+                    }
                     enemys[1].AddComponent<Animator>();
-                       
-                        RuntimeAnimatorController[] obj1 = Resources.LoadAll<RuntimeAnimatorController>(leny[7].anim);
+                    enemys[1].GetComponent<BoxCollider2D>().size = new Vector2(2.87f, 2.61f);
+                    RuntimeAnimatorController[] obj1 = Resources.LoadAll<RuntimeAnimatorController>(leny[7].anim);
                         enemys[1].GetComponent<Animator>().runtimeAnimatorController = obj1[0];
                         Sprite[] obj = Resources.LoadAll<Sprite>(leny[7].pathSprite);
                         enemys[1].GetComponent<SpriteRenderer>().sprite = obj[0];
@@ -177,13 +237,26 @@ public class battleScript : MonoBehaviour
                         leny[8] = new creatureScript.CREATURE(1, 3, 1, "Wolf", "w1", globalSlots.slot8I, "Sprites/wolfsheet1", "audio/wolf1", "audio/wolf1Die", "Animations/wolfenemy1", "");
                         enemys[2].transform.localScale = new Vector3(2, 2, 2);
                     }
+                    if (globalSlots.slot9T == "z1")
+                    {
+                        leny[8] = new creatureScript.CREATURE(2, 3, 6, "Zombie", "z1", globalSlots.slot9I, "Sprites/zombie", "audio/mob2", "audio/mob2die", "Animations/zombie1", "");
+                        enemys[2].transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+                        enemys[2].transform.Rotate(0, 180, 0);
+                    }
+                    if (globalSlots.slot9T == "z2")
+                    {
+                        leny[8] = new creatureScript.CREATURE(3, 3, 7, "Zombie Girl", "z2", globalSlots.slot9I, "Sprites/zombieGirl", "audio/mob2", "audio/mob2die", "Animations/zombie2", "");
+                        enemys[2].transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+                        enemys[2].transform.Rotate(0, 180, 0);
+                    }
                     enemys[2].AddComponent<Animator>();
-                       
-                       
+                    enemys[2].GetComponent<BoxCollider2D>().size = new Vector2(2.87f, 2.61f); ;
+
+
                         RuntimeAnimatorController[] obj1 = Resources.LoadAll<RuntimeAnimatorController>(leny[8].anim);
                         enemys[2].GetComponent<Animator>().runtimeAnimatorController = obj1[0];
                         Sprite[] obj = Resources.LoadAll<Sprite>(leny[8].pathSprite);
-                        enemys[2].GetComponent<SpriteRenderer>().sprite = obj[5];
+                        enemys[2].GetComponent<SpriteRenderer>().sprite = obj[0];
                         enemys[2].transform.position = (TileModel[j + (i * 8)].GetComponent<Renderer>().bounds.center) - new Vector3(0, 0, 0.1f); ;
                         enemys[2].SetActive(true);
                         GameModel[i, j] = leny[8].sortName;
@@ -206,11 +279,18 @@ public class battleScript : MonoBehaviour
         }
         if(numberOfEnemy<1)
         {
-            if (sqlCreate.getData("loaded") == "0")
+            if (db.readTheData(1) == "0")
             {
-                flowchart.SendFungusMessage("youWin");
+                
                 globalMoney.setMoney(givingMoney);
-                sqlCreate.setData("loaded","1");
+                db.addThingToList(2,globalSlots.slot1I.ToString());
+                db.addThingToList(3, globalSlots.slot2I.ToString());
+                db.addThingToList(4, globalSlots.slot3I.ToString());
+                db.addThingToList(5, globalSlots.slot4I.ToString());
+                db.addThingToList(6, globalSlots.slot5I.ToString());
+                db.addThingToList(7, globalSlots.slot6I.ToString());
+                db.addThingToList(1, "1");
+                flowchart.SendFungusMessage("youWin");
             }
         }
         whereTogo1 = whereTogo;
@@ -406,7 +486,14 @@ public class battleScript : MonoBehaviour
         }
         if (round==7)
         {
-               attackEnemy();
+            if (globalSlots.slot7I > 0)
+            {
+                attackEnemy();
+            }
+            else
+            {
+                moved = true;
+            }
             if (moved == true)
             {
                 moved = false;
@@ -417,7 +504,14 @@ public class battleScript : MonoBehaviour
         }
         if (round==8)
         {
-            attackEnemy();
+            if (globalSlots.slot8I > 0)
+            {
+                attackEnemy();
+            }
+            else
+            {
+                moved = true;
+            }
 
             if (moved == true)
             {
@@ -597,7 +691,44 @@ public class battleScript : MonoBehaviour
                 globalSlots.slot2x = position % 8;
                 globalSlots.twoSelected = false;
                 round++;
-                StartCoroutine(playSoundSlot1(leny[1].aud1));
+                StartCoroutine(playSoundSlot2(leny[1].aud1));
+            }
+            
+        }
+        if (globalSlots.threeSelected)
+        {
+            int position = int.Parse(whereTogo.Replace("simpleTile", ""));
+            if (tileS[position] == "1")
+            {
+                solders[2].transform.position = GameObject.Find(tileName).GetComponent<Renderer>().bounds.center - new Vector3(0, 0, 0.1f);
+
+                for (int i = 0; i < 64; i++)
+                {
+                    if (tileS[i] == "4")
+                    {
+                        tileS[i] = "0";
+                        tileSLocal[i] = "0";
+                        GameModel[i / 8, i % 8] = "0";
+                    }
+                    if (tileS[i] == "1")
+                    {
+                        tileS[i] = "0";
+                        tileSLocal[i] = "0";
+                        GameModel[i / 8, i % 8] = "0";
+                    }
+                    if (tileSLocal[i] == "20")
+                    {
+                        tileSLocal[i] = tileS[i];
+                    }
+                }
+                tileS[position] = "4";
+                tileSLocal[position] = "4";
+                GameModel[position / 8, position % 8] = "as";
+                globalSlots.slot2y = position / 8;
+                globalSlots.slot2x = position % 8;
+                globalSlots.threeSelected = false;
+                round++;
+                StartCoroutine(playSoundSlot3(leny[2].aud1));
             }
             
         }
@@ -1399,13 +1530,13 @@ public class battleScript : MonoBehaviour
             if(target=="2")
             {
                 globalSlots.setSlot1(survival);
-                sqlCreate.setData("slot1I", survival.ToString());
+                //sqlCreate.setData("slot1I", survival.ToString());
                 leny[0].db = survival;
             }
             if (target=="3")
             {
                 globalSlots.setSlot2(survival);
-                sqlCreate.setData("slot2I", survival.ToString());
+               // sqlCreate.setData("slot2I", survival.ToString());
                 leny[1].db = survival;
             }
         }
@@ -1491,6 +1622,16 @@ public class battleScript : MonoBehaviour
         erase("3");
 
     }
+    IEnumerator Solder3Die(AudioClip clip)
+    {
+        yield return new WaitForSeconds(.5f);
+        solders[2].GetComponent<AudioSource>().enabled = false;
+        solders[2].GetComponent<AudioSource>().clip = clip;
+        solders[2].GetComponent<AudioSource>().enabled = true;
+        solders[2].SetActive(false);
+        erase("4");
+
+    }
     IEnumerator playSoundSlot1(AudioClip clip)
     {
         yield return new WaitForSeconds(0.2f);
@@ -1507,6 +1648,16 @@ public class battleScript : MonoBehaviour
         solders[1].GetComponent<AudioSource>().enabled = false;
         solders[1].GetComponent<AudioSource>().clip = clip;
         solders[1].GetComponent<AudioSource>().enabled = true;
+
+    }
+    IEnumerator playSoundSlot3(AudioClip clip)
+    {
+        yield return new WaitForSeconds(0.3f);
+        solders[2].AddComponent<AudioSource>();
+        solders[2].GetComponent<AudioSource>().volume = 0.15f;
+        solders[2].GetComponent<AudioSource>().enabled = false;
+        solders[2].GetComponent<AudioSource>().clip = clip;
+        solders[2].GetComponent<AudioSource>().enabled = true;
 
     }
     IEnumerator playSoundslot7(AudioClip clip)

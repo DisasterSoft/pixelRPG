@@ -28,11 +28,11 @@ public class globalVariable : MonoBehaviour
     private void Start()
     {
         player = nonStaticplayer;
-        if (sqlCreate.getData("loaded") == "1")
+        loadCount = int.Parse(db.readTheData(17));
+        if (db.readTheData(1) == "1")//loaded
         {
-            objectInField = sqlCreate.getData("ObjectHelper");
-            Cards= sqlCreate.getData("Cards");
-            loadCount = int.Parse(sqlCreate.getData("loadCount"));
+            objectInField = db.readTheData(18);//objecthelper
+            Cards= db.readTheData(15);//cards
         }
         else
         {
@@ -41,9 +41,12 @@ public class globalVariable : MonoBehaviour
              // sqlCreate.newStart();
             }
         }
+        
         if (loadCount==0)
         {
-            
+            Debug.Log("bejött");
+            StartCoroutine(eraseLoadPanel());
+            thinkgs[4].SetActive(true);
             miscMenu[0].SetActive(false); 
             miscMenu[1].SetActive(false); 
             miscMenu[2].SetActive(false); 
@@ -54,15 +57,18 @@ public class globalVariable : MonoBehaviour
         }
         if (loadCount == 1)
         {
+
+            thinkgs[4].SetActive(true);
             miscMenu[0].SetActive(true);
             miscMenu[1].SetActive(true);
-            miscMenu[2].SetActive(true);
+            miscMenu[2].SetActive(false);
             miscMenu[3].SetActive(false);
             miscMenu[7].SetActive(false);
             miscMenu[8].SetActive(true);
         }
         if (loadCount == 2)
         {
+            thinkgs[4].SetActive(true);
             miscMenu[0].SetActive(true);
             miscMenu[1].SetActive(true);
             miscMenu[2].SetActive(true);
@@ -70,33 +76,80 @@ public class globalVariable : MonoBehaviour
             miscMenu[7].SetActive(true);
             miscMenu[8].SetActive(true);
         }
+        if (loadCount == 3)
+        {
+            thinkgs[4].SetActive(true);
+            miscMenu[0].SetActive(true);
+            miscMenu[1].SetActive(true);
+            miscMenu[2].SetActive(true);
+            miscMenu[3].SetActive(false);
+            miscMenu[7].SetActive(true);
+            miscMenu[8].SetActive(true);
+        }
+        if (loadCount == 4)
+        {
+            miscMenu[0].SetActive(true);
+            miscMenu[1].SetActive(true);
+            miscMenu[2].SetActive(true);
+            miscMenu[3].SetActive(true);
+            miscMenu[7].SetActive(true);
+            miscMenu[8].SetActive(true);
+        }
+        if (loadCount == 5)
+        {
+            thinkgs[4].SetActive(true);
+            db.addThingToList(1, "1");
+            cameraScriptMap.playRaisOftheDeath();
+            miscMenu[0].SetActive(true);
+            miscMenu[1].SetActive(true);
+            miscMenu[2].SetActive(true);
+            miscMenu[3].SetActive(true);
+            miscMenu[7].SetActive(true);
+            miscMenu[8].SetActive(true);
+        }
        
     }
     public static  void addObjectToList(string objective)
     {
-        objectInField = objectInField + objective + ",";
-        sqlCreate.setData("ObjectHelper", objectInField);
+     objectInField = objectInField + objective + ",";
+     db.addObjectToList(objective);
     }
     public  void addObjectToListNonstatic(string objective)
     {
         objectInField = objectInField + objective + ",";
-        sqlCreate.setData("ObjectHelper", objectInField);
+        db.addObjectToList(objective);
     }
     public static void setPlayerCoord()
     {
-        playerCoordinate = player.transform.position.x+";"+player.transform.position.y;
-        sqlCreate.setData("Coordinate", playerCoordinate);
+        playerCoordinate = player.transform.position.x+"&"+player.transform.position.y;
+        db.addThingToList(16, playerCoordinate);
     }
+    public void setPlayerCoordnonST()
+    {
+        playerCoordinate = player.transform.position.x+"&"+player.transform.position.y;
+        db.addThingToList(16, playerCoordinate);
+    }  
+    public static void setPlayerCoordToSpec(float x, float y)
+    {
+        playerCoordinate = x+"&"+y;
+        db.addThingToList(16, playerCoordinate);
+    }
+    public void setPlayerCoordToSpecNOnST(float x, float y)
+    {
+        playerCoordinate = x+"&"+y;
+        db.addThingToList(16, playerCoordinate);
+    }
+    
     public static void setMoney(int moneys)
     {
-       money=globalMoney.moneyI;
+       money=int.Parse(db.readTheData(14));
        money += moneys;
-       sqlCreate.setData("Money", money.ToString());
+       db.addThingToList(14, money.ToString());
     }
     public static void setCard(string card)
     {
-        Cards = Cards + card + ",";
-        sqlCreate.setData("Cards", Cards);
+        Cards = db.readTheData(15)  + card + ",";
+        db.addThingToList(15, Cards);
     }
    
     public void Update()
@@ -107,25 +160,31 @@ public class globalVariable : MonoBehaviour
         objectsHelper = objectInField;
         CardsnonStat = Cards;
         loadCountnonStat =loadCount;
-        if (sqlCreate.getData("loaded") == "1")
+        if (db.readTheData(1) == "1")
         {
             loadCount++;
-            sqlCreate.setData("loadCount", loadCount.ToString());
-            thinkgs[4].SetActive(true);
+            db.addThingToList(17, loadCount.ToString());
+            //thinkgs[4].SetActive(true);
             StartCoroutine(loadThings());
             isloaded = false;
-            sqlCreate.setData("loaded", "0");
+            db.addThingToList(1, "0");
         }
        
            
        
     }
 
-    IEnumerator loadThings()
+    IEnumerator eraseLoadPanel()
     {
+        yield return new WaitForSeconds(1);
         thinkgs[4].SetActive(false);
+    }
+
+        IEnumerator loadThings()
+    {
+        
         yield return new WaitForSeconds(0.5f);
-        string rendez = sqlCreate.getData("ObjectHelper");
+        string rendez = db.readTheData(18);
         string[] rendez_a = rendez.Split(',');
         for (int i = 0; i < rendez_a.Length; i++)
         {
@@ -141,11 +200,12 @@ public class globalVariable : MonoBehaviour
             }
         }
         
-            globalMoney.moneyI = int.Parse(sqlCreate.getData("Money"));
+        globalMoney.moneyI = int.Parse(db.readTheData(14));
         Debug.Log(money + "isLoaded");
             float x, y;
-            playerCoordinate = sqlCreate.getData("Coordinate");
-            string[] coord = playerCoordinate.Split(';');
+            playerCoordinate = db.readTheData(16);
+            //playerCoordinate = playerCoordinate;
+            string[] coord = playerCoordinate.Split('&');
             x = float.Parse(coord[0]);
             y = float.Parse(coord[1]);
             player.transform.position = new Vector3(x, y);
@@ -168,48 +228,59 @@ public class globalVariable : MonoBehaviour
         if (globalSlots.slot2I>0)
         {
             Debug.Log("slot 2isLoaded");
-            miscMenu[0].SetActive(true);
+            miscMenu[1].SetActive(true);
             thinkgs[3].SetActive(true);
         }
         else
         {
             Debug.Log("slot 2isUnLoaded");
+            miscMenu[2].SetActive(false);
             thinkgs[3].SetActive(false);
         }
         if (globalSlots.slot3I > 0)
         {
-            miscMenu[0].SetActive(true);
+            miscMenu[3].SetActive(true);
             Debug.Log("slot 3isLoaded");
             thinkgs[5].SetActive(true);
         }
         else
         {
-            miscMenu[0].SetActive(true);
+            miscMenu[3].SetActive(false);
             Debug.Log("slot 3isUnLoaded");
             thinkgs[5].SetActive(false);
         }
-         if(Cards.Length>0)
+        Cards = db.readTheData(15);
+         if(Cards.Length>1)
             {
             miscMenu[7].SetActive(true);
             Debug.Log("card isLoaded");
             }
-        
+
+        thinkgs[4].SetActive(false);
+    }
+    public void addKnight1(int dbk)
+    {
+        globalSlots.slot1I += dbk;
+        globalSlots.slot1T += "k";
+        int slot1 = int.Parse(db.readTheData(2)) + dbk;
+        db.addThingToList(2, slot1.ToString());
+        db.addThingToList(8, "k");
+
 
     }
-    public void addKnight1(int db)
+    public void addArcher1(int dbk)
     {
-        globalSlots.slot1I += db;
-        sqlCreate.addSlot(1, db, "k");
+        globalSlots.slot2I += dbk;
+        int slot1 = int.Parse(db.readTheData(3)) + dbk;
+        db.addThingToList(3, slot1.ToString());
+        db.addThingToList(9, "ar");
     }
-    public void addArcher1(int db)
+    public void addAssasin1(int dbk)
     {
-        globalSlots.slot2I += db;
-        sqlCreate.addSlot(2, db, "ar");
-    }
-    public void addAssasin1(int db)
-    {
-        globalSlots.slot3I += db;
-        sqlCreate.addSlot(3, db, "as");
+        globalSlots.slot3I += dbk;
+        int slot1 = int.Parse(db.readTheData(4)) + dbk;
+        db.addThingToList(4, slot1.ToString());
+        db.addThingToList(10, "as");  
     }
     
 

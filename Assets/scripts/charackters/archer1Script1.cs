@@ -43,18 +43,15 @@ public class archer1Script1 : MonoBehaviour
         flowchart.SendFungusMessage("Archer1");
        
     }
-    public void addArcherSlot2()
-    {
-
-    }
+    
     public void checkMoney(int amount)
     {
         if ((globalMoney.moneyI - amount) > -1)
         {
-            globalMoney.moneyI -= amount;
+            globalMoney.giveMoney1(amount);
             flowchart.SetBooleanVariable("Archerpayed",true);
             globalVariable.addObjectToList("archer1");
-            globalSlots.setSlot2(30);
+           globalSlots.setSlot2(30);
             globalSlots.setSlot2Type("ar");
         }
         else

@@ -14,8 +14,11 @@ public class tavernSpeeker : MonoBehaviour
     public int thingCount = 0;
     public int zsigiCount1 = 0;
     public int archerCount = 0;
-   
-   
+
+    public void Start()
+    {
+        db.addThingToList(1, "1");
+    }
     void OnTriggerEnter2D(Collider2D other)
     {
         if(this.name == "Elf" || this.name=="Elf1" || this.name == "Elf2" || this.name == "Elf3" || this.name == "Elf4" || this.name == "Elf5")
@@ -140,7 +143,8 @@ public class tavernSpeeker : MonoBehaviour
             flowchart.SendFungusMessage("exit");
             int givingMoney = globalMoney.moneyI;
             globalMoney.setMoney(givingMoney);
-            globalVariable.isloaded = true;
+            db.addThingToList(17, "5");
+            globalVariable.setPlayerCoordToSpec(-17.02f, 3.44f);
         }
 
     }
@@ -158,14 +162,15 @@ public class tavernSpeeker : MonoBehaviour
     {
         globalVariable.addObjectToList("assasin");
         globalVariable.setPlayerCoord();
-        globalVariable.setCard("c1");
+        //globalVariable.setCard("c1");
     }
-    IEnumerator loadSceene()
+   
+   /* IEnumerator loadSceene()
     {
         yield return new WaitForSeconds(0.1f);
        
 
-    }
+    }*/
 
 
 }

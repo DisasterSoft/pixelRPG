@@ -43,6 +43,22 @@ public class onBattleClicked : MonoBehaviour
                     battleScript.notInfo = true;
                 }
         }
+        if (this.name=="Assasin")
+        {
+           
+                GameObject.Find("Assasin").GetComponent<AudioSource>().enabled=false;
+                GameObject.Find("Assasin").GetComponent<AudioSource>().clip = battleScript.leny[2].aud3;
+                GameObject.Find("Assasin").GetComponent<AudioSource>().enabled = true;
+                GameObject.Find("youStat").GetComponent<Text>().text=
+               battleScript.leny[2].name+"("+globalSlots.slot3I+")\n HP: "+ battleScript.leny[2].ahealt+" ("+ battleScript.leny[2].ahealt* globalSlots.slot3I + ")\n"+"DMG: "+ battleScript.leny[2].admg+" ("+ battleScript.leny[2].admg* globalSlots.slot3I + ")";
+                if (battleScript.round == 3)
+                {
+                    getLepes(globalSlots.slot3T, battleScript.leny[2].move);
+                    battleScript.painted = false;
+                    globalSlots.threeSelected = true;
+                    battleScript.notInfo = true;
+                }
+        }
         if (this.name=="enemy1")
         {
             
@@ -98,6 +114,11 @@ public class onBattleClicked : MonoBehaviour
                     battleScript.tileSLocal[i] = "20";
                 }
             }
+        }
+        if (mit == "as")
+        {
+            oszlop = globalSlots.slot2y;
+            sor = globalSlots.slot2x;  
         }
 
         for (int a = 0; a < (move + 1); a++)
@@ -181,6 +202,10 @@ public class onBattleClicked : MonoBehaviour
             if (globalSlots.twoSelected)
             {
                 dmg = battleScript.leny[1].admg * battleScript.leny[1].db;  
+            }
+            if (globalSlots.threeSelected)
+            {
+                dmg = battleScript.leny[2].admg * battleScript.leny[2].db;  
             }
             //it is critick?    
             int crit = Random.Range(1, 10);
@@ -345,6 +370,31 @@ public class onBattleClicked : MonoBehaviour
                     battleScript.whereTogo = "simpleTile" + (i);
                     break;
                 }
+            }
+
+        }
+        if (globalSlots.threeSelected)
+        {
+
+            if ((posi - 1) > -1 && battleScript.tileS[(posi - 1)] == "1" && !stop && (posi / 8) == ((posi - 1) / 8))
+            {
+                battleScript.whereTogo = "simpleTile" + (posi - 1);
+                stop = true;
+            }
+            if ((posi + 1) < 64 && battleScript.tileS[(posi + 1)] == "1" && !stop && (posi / 8) == ((posi + 1) / 8))
+            {
+                battleScript.whereTogo = "simpleTile" + (posi + 1);
+                stop = true;
+            }
+            if ((posi - 8) > -1 && battleScript.tileS[(posi - 8)] == "1" && !stop)
+            {
+                battleScript.whereTogo = "simpleTile" + (posi - 8);
+                stop = true;
+            }
+            if ((posi + 8) < 64 && battleScript.tileS[(posi + 8)] == "1" && !stop)
+            {
+                battleScript.whereTogo = "simpleTile" + (posi + 8);
+                stop = true;
             }
 
         }
