@@ -12,6 +12,7 @@ public class tavernSpeeker : MonoBehaviour
     public int barkeeperCount = 0;
     public int damiCount = 0;
     public int thingCount = 0;
+    public static int thingCount_st = 0;
     public int zsigiCount1 = 0;
     public int archerCount = 0;
 
@@ -67,8 +68,25 @@ public class tavernSpeeker : MonoBehaviour
            
             barkeeperCount++;
         }
-        if (this.name == "Thing")
+        if (this.name == "Thing1")
         {
+            if (thingCount_st == 1)
+            {
+                flowchart.SendFungusMessage("Thing2");
+            }
+            if (thingCount_st == 2)
+            {
+                flowchart.SendFungusMessage("Thing3");
+            }
+            if (thingCount_st == 3)
+            {
+                thingCount_st--;
+            }
+            thingCount_st++;
+        }
+            if (this.name == "Thing")
+        {
+           
             if (thingCount == 0)
             {
                 flowchart.SendFungusMessage("Thing1");
@@ -77,6 +95,7 @@ public class tavernSpeeker : MonoBehaviour
             {
                 thingCount--;
             }
+            
             thingCount++;
         }
         if (this.name == "BlueGirl" || this.name == "BlueGirl1" || this.name == "BlueGirl2")
@@ -120,8 +139,24 @@ public class tavernSpeeker : MonoBehaviour
                 flowchart.SendFungusMessage("knight");
             }
         }
+        if (this.name == "knight2")
+        {
+            if (zsigiCount1 == 0)
+            {
+                flowchart.SetIntegerVariable("Money", globalMoney.moneyI);
+                flowchart.SendFungusMessage("knight");
+            }
+        }
 
         if (this.name == "Archer")
+        {
+            if (archerCount == 0)
+            {
+                flowchart.SetIntegerVariable("Money", globalMoney.moneyI);
+                flowchart.SendFungusMessage("Archer");
+            }
+        }
+        if (this.name == "Archer2")
         {
             if (archerCount == 0)
             {
@@ -134,6 +169,13 @@ public class tavernSpeeker : MonoBehaviour
            
                
                 flowchart.SendFungusMessage("assasin");
+           
+        }
+        if (this.name == "assasin1")
+        {
+
+            flowchart.SetIntegerVariable("Money", globalMoney.moneyI);
+            flowchart.SendFungusMessage("assasin");
            
         }
         if (this.name == "exit")

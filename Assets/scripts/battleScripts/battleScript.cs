@@ -15,6 +15,8 @@ public class battleScript : MonoBehaviour
     public static int round=1;
     public static int numberOfEnemy = 0;
     public static int numberOfTeam = 0;
+    public int NSnumberOfEnemy = 0;
+    public  int NSnumberOfTeam = 0;
     public bool searched=false;
     public static bool painted=false;
     public static bool moved=false;
@@ -102,8 +104,8 @@ public class battleScript : MonoBehaviour
                     GameModel[i, j] = leny[2].sortName;
                     tileS[j + (i * 8)] = "4";
                     tileSLocal[j + (i * 8)] = "4";
-                    globalSlots.slot1x = j;
-                    globalSlots.slot1y = i;
+                    globalSlots.slot3x = j;
+                    globalSlots.slot3y = i;
                 }
                 if (i == 2 && j == 7 && globalSlots.slot2I > 0)
                 {
@@ -139,31 +141,47 @@ public class battleScript : MonoBehaviour
                     {
                         leny[6] = new creatureScript.CREATURE(4, 4, 3, "Blue Ipm", "BImp", globalSlots.slot7I, "Sprites/walk_vanilla_BIMP", "audio/mob2", "audio/mob2die", "Animations/blueImpAnim","");
                         enemys[0].transform.localScale = new Vector3(3, 3, 3);
+                        enemys[0].GetComponent<BoxCollider2D>().size = new Vector2(0.49f, 0.5f);
+                        enemys[0].GetComponent<BoxCollider2D>().offset = new Vector2(0, 0);
                     }
                     if (globalSlots.slot7T == "RImp")
                     {
                         leny[6] = new creatureScript.CREATURE(5, 5, 4, "Red Ipm", "RImp", globalSlots.slot7I, "Sprites/walk_vanilla_RIMP", "audio/mob3", "audio/mob3die", "Animations/redImpAnim","");
                         enemys[0].transform.localScale = new Vector3(3, 3, 3);
+                        enemys[0].GetComponent<BoxCollider2D>().size = new Vector2(0.49f, 0.5f);
+                        enemys[0].GetComponent<BoxCollider2D>().offset = new Vector2(0, 0);
                     }
                     if (globalSlots.slot7T == "w1")
                     {
                         leny[6] = new creatureScript.CREATURE(1, 3, 1, "Wolf", "w1", globalSlots.slot7I, "Sprites/wolfsheet1", "audio/wolf1", "audio/wolf1Die", "Animations/wolfenemy1", "");
                         enemys[0].transform.localScale = new Vector3(2, 2, 2);
+                        enemys[0].GetComponent<BoxCollider2D>().size = new Vector2(0.49f, 0.5f);
+                        enemys[0].GetComponent<BoxCollider2D>().offset = new Vector2(0, 0);
+                    }
+                    if (globalSlots.slot7T == "w2")
+                    {
+                        leny[6] = new creatureScript.CREATURE(2, 3, 2, "Black Wolf", "w2", globalSlots.slot7I, "Sprites/wolfsheet2", "audio/wolf1", "audio/wolf1Die", "Animations/wolfenemy2", "");
+                        enemys[0].transform.localScale = new Vector3(2, 2, 2);
+                        enemys[0].GetComponent<BoxCollider2D>().size = new Vector2(0.49f, 0.5f);
+                        enemys[0].GetComponent<BoxCollider2D>().offset = new Vector2(0, 0);
                     }
                     if (globalSlots.slot7T == "z1")
                     {
                         leny[6] = new creatureScript.CREATURE(2, 3, 6, "Zombie", "z1", globalSlots.slot7I, "Sprites/zombie", "audio/mob2", "audio/mob2die", "Animations/zombie1", "");
                         enemys[0].transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
                         enemys[0].transform.Rotate(0, 180, 0);
+                        enemys[0].GetComponent<BoxCollider2D>().size = new Vector2(2.61f, 3.52f);
+                        enemys[0].GetComponent<BoxCollider2D>().offset = new Vector2(0.09f, 1.8f);
                     }
                     if (globalSlots.slot7T == "z2")
                     {
                         leny[6] = new creatureScript.CREATURE(3, 3, 7, "Zombie Girl", "z2", globalSlots.slot7I, "Sprites/zombieGirl", "audio/mob2", "audio/mob2die", "Animations/zombie2", "");
                         enemys[0].transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
                         enemys[0].transform.Rotate(0, 180, 0);
+                        enemys[0].GetComponent<BoxCollider2D>().size = new Vector2(2.61f, 3.52f);
+                        enemys[0].GetComponent<BoxCollider2D>().offset = new Vector2(0.09f, 1.8f);
                     }
                     enemys[0].AddComponent<Animator>();
-                    enemys[0].GetComponent<BoxCollider2D>().size = new Vector2(2.87f, 2.61f);
                     RuntimeAnimatorController[] obj1 = Resources.LoadAll<RuntimeAnimatorController>(leny[6].anim);
                         enemys[0].GetComponent<Animator>().runtimeAnimatorController =obj1[0];
                         Sprite[] obj = Resources.LoadAll<Sprite>(leny[6].pathSprite);
@@ -182,31 +200,47 @@ public class battleScript : MonoBehaviour
                     {
                         leny[7] = new creatureScript.CREATURE(5, 5, 4, "Red Ipm", "RImp", globalSlots.slot8I, "Sprites/walk-vanilla_RIMP", "audio/mob3", "audio/mob3die", "Animations/redImpAnim","");
                         enemys[1].transform.localScale = new Vector3(3, 3, 3);
+                        enemys[1].GetComponent<BoxCollider2D>().size = new Vector2(0.49f, 0.5f);
+                        enemys[1].GetComponent<BoxCollider2D>().offset = new Vector2(0, 0);
                     }
                     if (globalSlots.slot8T == "BImp")
                     {
                         leny[7] = new creatureScript.CREATURE(4, 4, 3, "Blue Ipm", "BImp", globalSlots.slot8I, "Sprites/walk_vanilla_BIMP", "audio/mob2", "audio/mob2die", "Animations/blueImpAnim","");
                         enemys[1].transform.localScale = new Vector3(3, 3, 3);
+                        enemys[1].GetComponent<BoxCollider2D>().size = new Vector2(0.49f, 0.5f);
+                        enemys[1].GetComponent<BoxCollider2D>().offset = new Vector2(0, 0);
                     }
                     if (globalSlots.slot8T == "w1")
                     {
                         leny[7] = new creatureScript.CREATURE(1, 3, 1, "Wolf", "w1", globalSlots.slot8I, "Sprites/wolfsheet1", "audio/wolf1", "audio/wolf1Die", "Animations/wolfenemy1", "");
                         enemys[1].transform.localScale = new Vector3(2, 2, 2);
+                        enemys[1].GetComponent<BoxCollider2D>().size = new Vector2(0.49f, 0.5f);
+                        enemys[1].GetComponent<BoxCollider2D>().offset = new Vector2(0, 0);
+                    }
+                    if (globalSlots.slot8T == "w2")
+                    {
+                        leny[7] = new creatureScript.CREATURE(2, 3, 2, "Black Wolf", "w2", globalSlots.slot8I, "Sprites/wolfsheet2", "audio/wolf1", "audio/wolf1Die", "Animations/wolfenemy2", "");
+                        enemys[1].transform.localScale = new Vector3(2, 2, 2);
+                        enemys[1].GetComponent<BoxCollider2D>().size = new Vector2(0.49f, 0.5f);
+                        enemys[1].GetComponent<BoxCollider2D>().offset = new Vector2(0, 0);
                     }
                     if (globalSlots.slot8T == "z2")
                     {
                         leny[7] = new creatureScript.CREATURE(3, 3, 7, "Zombie Girl", "z2", globalSlots.slot8I, "Sprites/zombieGirl", "audio/mob2", "audio/mob2die", "Animations/zombie2", "");
                         enemys[1].transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
                         enemys[1].transform.Rotate(0, 180, 0);
+                        enemys[1].GetComponent<BoxCollider2D>().size = new Vector2(2.61f, 3.52f);
+                        enemys[1].GetComponent<BoxCollider2D>().offset = new Vector2(0.09f, 1.8f);
                     }
                     if (globalSlots.slot8T == "z1")
                     {
                         leny[7] = new creatureScript.CREATURE(2, 3, 6, "Zombie", "z1", globalSlots.slot8I, "Sprites/zombie", "audio/mob2", "audio/mob2die", "Animations/zombie1", "");
                         enemys[1].transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
                         enemys[1].transform.Rotate(0, 180, 0);
+                        enemys[1].GetComponent<BoxCollider2D>().size = new Vector2(2.61f, 3.52f);
+                        enemys[1].GetComponent<BoxCollider2D>().offset = new Vector2(0.09f, 1.8f);
                     }
-                    enemys[1].AddComponent<Animator>();
-                    enemys[1].GetComponent<BoxCollider2D>().size = new Vector2(2.87f, 2.61f);
+                    enemys[1].AddComponent<Animator>(); 
                     RuntimeAnimatorController[] obj1 = Resources.LoadAll<RuntimeAnimatorController>(leny[7].anim);
                         enemys[1].GetComponent<Animator>().runtimeAnimatorController = obj1[0];
                         Sprite[] obj = Resources.LoadAll<Sprite>(leny[7].pathSprite);
@@ -226,34 +260,50 @@ public class battleScript : MonoBehaviour
                     {
                         leny[8] = new creatureScript.CREATURE(4, 4, 3, "Blue Ipm", "BImp", globalSlots.slot9I, "Sprites/walk_vanilla_BIMP", "audio/mob2", "audio/mob2die", "Animations/blueImpAnim","");
                         enemys[2].transform.localScale = new Vector3(3, 3, 3);
+                        enemys[2].GetComponent<BoxCollider2D>().size = new Vector2(0.49f, 0.5f);
+                        enemys[2].GetComponent<BoxCollider2D>().offset = new Vector2(0, 0);
                     }
                     if (globalSlots.slot9T == "RImp")
                     {
                         leny[8] = new creatureScript.CREATURE(5, 5, 4, "Red Ipm", "RImp", globalSlots.slot9I, "Sprites/walk_vanilla_RIMP", "audio/mob3", "audio/mob3die", "Animations/redImpAnim","");
                         enemys[2].transform.localScale = new Vector3(3, 3, 3);
+                        enemys[2].GetComponent<BoxCollider2D>().size = new Vector2(0.49f, 0.5f);
+                        enemys[2].GetComponent<BoxCollider2D>().offset = new Vector2(0, 0);
                     }
                     if (globalSlots.slot9T == "w1")
                     {
                         leny[8] = new creatureScript.CREATURE(1, 3, 1, "Wolf", "w1", globalSlots.slot8I, "Sprites/wolfsheet1", "audio/wolf1", "audio/wolf1Die", "Animations/wolfenemy1", "");
                         enemys[2].transform.localScale = new Vector3(2, 2, 2);
+                        enemys[2].GetComponent<BoxCollider2D>().size = new Vector2(0.49f, 0.5f);
+                        enemys[2].GetComponent<BoxCollider2D>().offset = new Vector2(0, 0);
                     }
                     if (globalSlots.slot9T == "z1")
                     {
                         leny[8] = new creatureScript.CREATURE(2, 3, 6, "Zombie", "z1", globalSlots.slot9I, "Sprites/zombie", "audio/mob2", "audio/mob2die", "Animations/zombie1", "");
                         enemys[2].transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
                         enemys[2].transform.Rotate(0, 180, 0);
+                        enemys[2].GetComponent<BoxCollider2D>().size = new Vector2(2.61f, 3.52f);
+                        enemys[2].GetComponent<BoxCollider2D>().offset = new Vector2(0.09f, 1.8f);
+                    }
+                    if (globalSlots.slot9T == "w2")
+                    {
+                        leny[8] = new creatureScript.CREATURE(2, 3, 2, "Black Wolf", "w2", globalSlots.slot9I, "Sprites/wolfsheet2", "audio/wolf1", "audio/wolf1Die", "Animations/wolfenemy2", "");
+                        enemys[2].transform.localScale = new Vector3(2, 2, 2);
+                        enemys[2].GetComponent<BoxCollider2D>().size = new Vector2(0.49f, 0.5f);
+                        enemys[2].GetComponent<BoxCollider2D>().offset = new Vector2(0, 0);
                     }
                     if (globalSlots.slot9T == "z2")
                     {
                         leny[8] = new creatureScript.CREATURE(3, 3, 7, "Zombie Girl", "z2", globalSlots.slot9I, "Sprites/zombieGirl", "audio/mob2", "audio/mob2die", "Animations/zombie2", "");
                         enemys[2].transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
                         enemys[2].transform.Rotate(0, 180, 0);
+                        enemys[2].GetComponent<BoxCollider2D>().size = new Vector2(2.61f, 3.52f);
+                        enemys[2].GetComponent<BoxCollider2D>().offset = new Vector2(0.09f, 1.8f);
                     }
                     enemys[2].AddComponent<Animator>();
-                    enemys[2].GetComponent<BoxCollider2D>().size = new Vector2(2.87f, 2.61f); ;
 
 
-                        RuntimeAnimatorController[] obj1 = Resources.LoadAll<RuntimeAnimatorController>(leny[8].anim);
+                    RuntimeAnimatorController[] obj1 = Resources.LoadAll<RuntimeAnimatorController>(leny[8].anim);
                         enemys[2].GetComponent<Animator>().runtimeAnimatorController = obj1[0];
                         Sprite[] obj = Resources.LoadAll<Sprite>(leny[8].pathSprite);
                         enemys[2].GetComponent<SpriteRenderer>().sprite = obj[0];
@@ -272,10 +322,13 @@ public class battleScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        NSnumberOfEnemy = numberOfEnemy;
+        NSnumberOfTeam = numberOfTeam;
         tileSS = tileS;
         if(numberOfTeam<1)
         {
           flowchart.SendFungusMessage("youLose");
+          db.youLose();
         }
         if(numberOfEnemy<1)
         {
@@ -724,8 +777,8 @@ public class battleScript : MonoBehaviour
                 tileS[position] = "4";
                 tileSLocal[position] = "4";
                 GameModel[position / 8, position % 8] = "as";
-                globalSlots.slot2y = position / 8;
-                globalSlots.slot2x = position % 8;
+                globalSlots.slot3y = position / 8;
+                globalSlots.slot3x = position % 8;
                 globalSlots.threeSelected = false;
                 round++;
                 StartCoroutine(playSoundSlot3(leny[2].aud1));
@@ -1498,21 +1551,27 @@ public class battleScript : MonoBehaviour
 
         int healt = 0;
         int ahealt = 0;
-        int db = 0;
+        int dba = 0;
         string name = "";
         if(target=="2")
         {
-                db = leny[0].db;
+                dba = leny[0].db;
                 ahealt = leny[0].ahealt;
                 name = leny[0].name;
         }
         if (target=="3")
         {     
-                db = leny[1].db;
+                dba= leny[1].db;
                 ahealt = leny[1].ahealt;
                 name = leny[1].name;
         }
-        healt = ahealt * db;
+        if (target=="4")
+        {     
+                dba = leny[2].db;
+                ahealt = leny[2].ahealt;
+                name = leny[2].name;
+        }
+        healt = ahealt * dba;
         int survival = 0 ;
         if((healt-admg)>0)
         {
@@ -1526,7 +1585,7 @@ public class battleScript : MonoBehaviour
             }
 
             GameObject.Find("enemyStat").GetComponent<Text>().text = lenyName + " attacked you, and do " + admg
-                + " dmg\n " + (db - survival) + " " + name + " die!";
+                + " dmg\n " + (dba - survival) + " " + name + " die!";
             if(target=="2")
             {
                 globalSlots.setSlot1(survival);
@@ -1539,6 +1598,13 @@ public class battleScript : MonoBehaviour
                // sqlCreate.setData("slot2I", survival.ToString());
                 leny[1].db = survival;
             }
+            if (target=="4")
+            {
+                globalSlots.setSlot3(survival);
+               // sqlCreate.setData("slot2I", survival.ToString());
+                leny[2].db = survival;
+            }
+            searched = false;
         }
         else
         {
@@ -1546,14 +1612,23 @@ public class battleScript : MonoBehaviour
             if (target == "2")
             {
                 globalSlots.setSlot1(0);
+                db.addThingToList(2,"0");
                 solders[0].GetComponent<Animator>().SetBool("Live", false);
                 StartCoroutine(Solder1Die(leny[0].aud3));
             }
             if (target == "3")
             {
                 globalSlots.setSlot2(0);
+                db.addThingToList(3, "0");
                 solders[1].GetComponent<Animator>().SetBool("Live", false);
                 StartCoroutine(Solder2Die(leny[1].aud3));
+            }
+            if (target == "4")
+            {
+                globalSlots.setSlot3(0);
+                db.addThingToList(4, "0");
+                solders[2].GetComponent<Animator>().SetBool("Live", false);
+                StartCoroutine(Solder3Die(leny[2].aud3));
             }
             numberOfTeam--;
         }
@@ -1598,6 +1673,7 @@ public class battleScript : MonoBehaviour
             }
         }
         returna = returna + posi + ",";
+        Debug.Log(returna + " retunr battlecript searchForenemy");
         return returna;
     }
    

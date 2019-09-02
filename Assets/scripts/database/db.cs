@@ -9,11 +9,14 @@ public class db : MonoBehaviour
     public GameObject kkir;
     public static  GameObject kkir_st;
     public static string realPath = "" ;
+    public static string realPath2 = "" ;
     public static string path ="" ;
+    public static string savePath ="" ;
 
     public void Awake()
     {
         realPath = Application.persistentDataPath + "/dbWoreven/db.txt";
+        realPath2 = Application.persistentDataPath + "/dbWoreven/save.txt";
        
         if (!System.IO.File.Exists(realPath))
         {
@@ -26,9 +29,14 @@ public class db : MonoBehaviour
             while (!reader.isDone) { }
             System.IO.File.WriteAllBytes(realPath, reader.bytes);
             System.IO.File.WriteAllText(realPath, "Worewen;0;0;0;0;0;0;0;0;0;0;0;0;0;0;;0&0;0;;0,0,0,0,0,0,0,0,0,0");
+            reader = new WWW(Application.streamingAssetsPath + "/dbWoreven/" + realPath2);
+            while (!reader.isDone) { }
+            System.IO.File.WriteAllBytes(realPath2, reader.bytes);
+            System.IO.File.WriteAllText(realPath2, "0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;;0&0;0;;0,0,0,0,0,0,0,0,0,0");
         }
         //Application.OpenURL(realPath);
         path = realPath;
+        savePath = realPath2;
         kkir_st = kkir;
         kkir_st.GetComponent<Text>().text = path;
     }
@@ -121,6 +129,33 @@ public class db : MonoBehaviour
         StreamWriter writer = new StreamWriter(path, false);
         writer.WriteLine(result);
         writer.Close();
+    }
+    public static void writeTheResultSaveGame(string result)
+    {
+        StreamWriter writer = new StreamWriter(savePath, false);
+        writer.WriteLine(result);
+        writer.Close();
+    }
+    public static void  youLose()
+    {
+        string newGame = "Worewen;0;0;0;0;0;0;0;0;0;0;0;0;0;0;;0&0;0;;0,0,0,0,0,0,0,0,0,0";
+        writeTheResult(newGame);
+
+    }
+    public static void  saveGame()
+    {
+        StreamReader reader = new StreamReader(path);
+        string theFile = reader.ReadLine();
+        reader.Close();
+        writeTheResultSaveGame(theFile);
+
+    }
+    public static void loadGame()
+    {
+        StreamReader reader = new StreamReader(savePath);
+        string theFile = reader.ReadLine();
+        reader.Close();
+        writeTheResult(theFile);
     }
 
 }

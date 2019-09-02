@@ -117,8 +117,8 @@ public class onBattleClicked : MonoBehaviour
         }
         if (mit == "as")
         {
-            oszlop = globalSlots.slot2y;
-            sor = globalSlots.slot2x;  
+            oszlop = globalSlots.slot3y;
+            sor = globalSlots.slot3x;  
         }
 
         for (int a = 0; a < (move + 1); a++)

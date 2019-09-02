@@ -6,11 +6,21 @@ using Fungus;
 public class langolofa : MonoBehaviour
 {
     public Flowchart flowchart;
+    public static int count = 0;
    
     void OnTriggerEnter2D(Collider2D other)
     {
+        if (count == 0)
+        {
+            flowchart.SendFungusMessage("Mandragora");
+        }
+        if (count == 1)
+        {
+            flowchart.SendFungusMessage("Mandragora1");
+            count--;
+        }
 
-        flowchart.SendFungusMessage("Mandragora");
+        count++;
 
     }
 
@@ -20,20 +30,11 @@ public class langolofa : MonoBehaviour
         {
             flowchart.SetBooleanVariable("payOk", true);
             globalMoney.moneyI -= amount;
-            StartCoroutine(SavingGame());
+            globalVariable.setPlayerCoord();
+            db.addThingToList(14, globalMoney.moneyI.ToString());
+            db.saveGame();
         }
     }
 
-    IEnumerator SavingGame()
-    {
-        yield return new WaitForSeconds(1f);
-        PlayerPrefs.SetInt("money", globalVariable.money);
-        PlayerPrefs.SetString("playerCoord", player_controller.player.transform.position.x+","+ player_controller.player.transform.position.y);
-        PlayerPrefs.SetString("objectInfield",globalVariable.objectInField);
-        PlayerPrefs.SetString("cards",globalVariable.Cards);
-        PlayerPrefs.SetInt("slot1I",globalSlots.slot1I);
-        PlayerPrefs.SetInt("slot2I",globalSlots.slot2I);
-        PlayerPrefs.SetString("slot1T",globalSlots.slot1T);
-        PlayerPrefs.SetString("slot2T",globalSlots.slot2T);
-    }
+   
     }

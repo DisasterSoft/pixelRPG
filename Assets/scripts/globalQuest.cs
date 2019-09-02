@@ -22,6 +22,7 @@ public class globalQuest : MonoBehaviour
         }
         db.addThingToList(19, returnQuest);
     }
+
     public  void setquestComplet(int qID)
     {
         string quest = db.readTheData(19);
@@ -39,6 +40,10 @@ public class globalQuest : MonoBehaviour
             }
         }
         db.addThingToList(19, returnQuest);
+    }
+    public void startQuest3()
+    {
+        tavernSpeeker.thingCount_st = 1;
     }
 
 }

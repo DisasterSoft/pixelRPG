@@ -44,7 +44,6 @@ public class globalVariable : MonoBehaviour
         
         if (loadCount==0)
         {
-            Debug.Log("bejött");
             StartCoroutine(eraseLoadPanel());
             thinkgs[4].SetActive(true);
             miscMenu[0].SetActive(false); 
@@ -57,7 +56,7 @@ public class globalVariable : MonoBehaviour
         }
         if (loadCount == 1)
         {
-
+            cameraScriptMap.playOutStartPos();
             thinkgs[4].SetActive(true);
             miscMenu[0].SetActive(true);
             miscMenu[1].SetActive(true);
@@ -68,6 +67,7 @@ public class globalVariable : MonoBehaviour
         }
         if (loadCount == 2)
         {
+            cameraScriptMap.playOutStartPos();
             thinkgs[4].SetActive(true);
             miscMenu[0].SetActive(true);
             miscMenu[1].SetActive(true);
@@ -107,7 +107,41 @@ public class globalVariable : MonoBehaviour
             miscMenu[7].SetActive(true);
             miscMenu[8].SetActive(true);
         }
-       
+        if (loadCount == 6)
+        {
+            thinkgs[4].SetActive(true);
+            cameraScriptMap.playRaisOftheDeath();
+            miscMenu[0].SetActive(true);
+            miscMenu[1].SetActive(true);
+            miscMenu[2].SetActive(true);
+            miscMenu[3].SetActive(true);
+            miscMenu[7].SetActive(true);
+            miscMenu[8].SetActive(true);
+        }
+        if (loadCount == 7)
+        {
+            thinkgs[4].SetActive(true);
+            cameraScriptMap.playRaisOftheDeath();
+            miscMenu[0].SetActive(true);
+            miscMenu[1].SetActive(true);
+            miscMenu[2].SetActive(true);
+            miscMenu[3].SetActive(true);
+            miscMenu[7].SetActive(true);
+            miscMenu[8].SetActive(true);
+        }
+        if (loadCount ==10)
+        {
+            thinkgs[4].SetActive(true);
+            cameraScriptMap.playRaisOftheDeath();
+            miscMenu[0].SetActive(true);
+            miscMenu[1].SetActive(true);
+            miscMenu[2].SetActive(true);
+            miscMenu[3].SetActive(true);
+            miscMenu[4].SetActive(true);
+            miscMenu[7].SetActive(true);
+            miscMenu[8].SetActive(true);
+        }
+
     }
     public static  void addObjectToList(string objective)
     {
@@ -188,9 +222,13 @@ public class globalVariable : MonoBehaviour
         string[] rendez_a = rendez.Split(',');
         for (int i = 0; i < rendez_a.Length; i++)
         {
-            if(rendez_a[i]== "impBlue1")
+            if(rendez_a[i]== "impBlue1" && int.Parse(db.readTheData(17))<4)
             {
                 impIsDead = true;
+                flowchart.SendFungusMessage("tavernOpen");
+            }
+            if (rendez_a[i]== "zombie1")
+            {
                 flowchart.SendFungusMessage("tavernOpen");
             }
             if (GameObject.Find(rendez_a[i]) != null)
@@ -213,9 +251,11 @@ public class globalVariable : MonoBehaviour
             thinkgs[0].SetActive(true);
             thinkgs[1].SetActive(true);
             
-        if(globalSlots.slot1I>0)
+        if(int.Parse(db.readTheData(2))>0)
         {
-            miscMenu[0].SetActive(true);
+            globalSlots.setSlot1(int.Parse(db.readTheData(2)));
+            globalSlots.setSlot1Type(db.readTheData(8));
+                miscMenu[0].SetActive(true);
             Debug.Log("slot 1isLoaded");
             thinkgs[2].SetActive(true);
         }
@@ -225,8 +265,10 @@ public class globalVariable : MonoBehaviour
             miscMenu[0].SetActive(true);
             thinkgs[2].SetActive(false);
         }
-        if (globalSlots.slot2I>0)
+        if (int.Parse(db.readTheData(3)) > 0)
         {
+            globalSlots.setSlot2(int.Parse(db.readTheData(3)));
+            globalSlots.setSlot2Type(db.readTheData(9));
             Debug.Log("slot 2isLoaded");
             miscMenu[1].SetActive(true);
             thinkgs[3].SetActive(true);
@@ -237,8 +279,10 @@ public class globalVariable : MonoBehaviour
             miscMenu[2].SetActive(false);
             thinkgs[3].SetActive(false);
         }
-        if (globalSlots.slot3I > 0)
+        if (int.Parse(db.readTheData(4)) > 0)
         {
+            globalSlots.setSlot3(int.Parse(db.readTheData(4)));
+            globalSlots.setSlot3Type(db.readTheData(10));
             miscMenu[3].SetActive(true);
             Debug.Log("slot 3isLoaded");
             thinkgs[5].SetActive(true);
