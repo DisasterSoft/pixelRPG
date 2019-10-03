@@ -7,9 +7,11 @@ public class langolofa : MonoBehaviour
 {
     public Flowchart flowchart;
     public static int count = 0;
+    public int cont_nost = 0;
    
     void OnTriggerEnter2D(Collider2D other)
     {
+
         if (count == 0)
         {
             flowchart.SendFungusMessage("Mandragora");
@@ -21,6 +23,7 @@ public class langolofa : MonoBehaviour
         }
 
         count++;
+        cont_nost = count;
 
     }
 
