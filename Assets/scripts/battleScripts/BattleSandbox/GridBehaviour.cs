@@ -51,7 +51,7 @@ public class GridBehaviour : MonoBehaviour
         gridArray = new GameObject[columns, rows];
 
         if (gridPrefab)
-        {
+        {            
             GenerateGrid();
         }
         else
@@ -155,6 +155,9 @@ public class GridBehaviour : MonoBehaviour
 
             //Megkeresi a célhoz legközelebbi cellát az adott hullámból, és hozzáadja a útvonal listához.
             GameObject tempObject = FindClosest(gridArray[endX, endY].transform, tempList);
+
+            //Minimális vizualizáció, nem tűnik el a régi út
+            tempObject.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
             path.Add(tempObject);
 
             x = tempObject.GetComponent<GridStat>().x;
