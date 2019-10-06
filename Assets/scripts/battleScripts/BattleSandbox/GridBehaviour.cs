@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using Utilities;
 
 public enum Directions //Csak azért, hogy olvashatóbb legyen a kód.
 {
@@ -46,6 +47,8 @@ public class GridBehaviour : MonoBehaviour
     //A legrövidebb utat tartalmazó mezők listája
     public List<GameObject> path = new List<GameObject>();
 
+    GridBase grid;
+
     private void Awake()
     {
         gridArray = new GameObject[columns, rows];
@@ -58,6 +61,8 @@ public class GridBehaviour : MonoBehaviour
         {
             print("Missing grid prefab, please assign.");
         }
+
+        grid = new GridBase(4, 2, 1f, new Vector3(10,0));
     }
 
     private void Update()
@@ -68,6 +73,16 @@ public class GridBehaviour : MonoBehaviour
             SetPath();
 
             findDistance = false;
+        }
+
+        //Teszteléshez: Bal egér beír, Jobb egér kiolvas
+        if (Input.GetMouseButtonDown(0))
+        {
+            grid.SetValue(UtilsClass.GetMouseWorldPosition(), 56);
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            Debug.Log(grid.GetValue(UtilsClass.GetMouseWorldPosition()));
         }
     }
 
