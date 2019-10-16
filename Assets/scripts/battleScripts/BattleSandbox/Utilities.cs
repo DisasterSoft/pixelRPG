@@ -8,6 +8,7 @@ namespace Utilities
      * Különböző, válogatott, több helyen is használható funkciók gyűjtőhelye ez a script.
      * Idővel bővülni fog a tárház és az egyszerűbb használhatóság végett namespace-be foglaltam.
      */
+
     public static class UtilsClass
     {
         public const int sortingOrderDefault = 5000;

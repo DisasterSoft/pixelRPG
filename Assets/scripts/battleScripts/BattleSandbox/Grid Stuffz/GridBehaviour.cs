@@ -55,14 +55,14 @@ public class GridBehaviour : MonoBehaviour
 
         if (gridPrefab)
         {            
-            GenerateGrid();
+           GenerateGrid();
         }
         else
         {
             print("Missing grid prefab, please assign.");
         }
 
-        grid = new GridBase(4, 2, 1f, new Vector3(10,0));
+        grid = new GridBase(columns, rows, scale, leftBottomLocation);
     }
 
     private void Update()

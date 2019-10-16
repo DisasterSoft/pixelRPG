@@ -32,7 +32,7 @@ public class GridBase
             {
                 //Debug.Log(x + (" ") + y);
                 debugTextArray[x, y] = UtilsClass.CreateWorldText(gridArray[x, y].ToString(), null, GetWorldPosition(x, y) +
-                                                                 (new Vector3(cellSize, cellSize) * .5f), 5, Color.red, TextAnchor.MiddleCenter);
+                                                                 (new Vector3(cellSize, cellSize) * .5f), 5, Color.white, TextAnchor.MiddleCenter);
             }
         }
     }
@@ -54,7 +54,7 @@ public class GridBase
     //Grid pozíciót használva
     public void SetValue(int x, int y, int value)
     {
-        if (x >= 0 && y >=0 && x < width && y < height)
+        if (x >= 0 && y >= 0 && x < width && y < height)
         {
             gridArray[x, y] = value;
             debugTextArray[x, y].text = gridArray[x, y].ToString();
