@@ -14,7 +14,8 @@ public class Testing : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            DamagePopup.Create(UtilsClass.GetMouseWorldPosition(), 100);
+            bool isCriticalHit = Random.Range(0, 100) < 30;
+            DamagePopup.Create(UtilsClass.GetMouseWorldPosition(), 100, isCriticalHit);
         }
     }
 }
