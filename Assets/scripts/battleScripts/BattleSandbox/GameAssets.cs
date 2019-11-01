@@ -23,5 +23,11 @@ public class GameAssets : MonoBehaviour
         }
     }
 
+    // Az összes referencia
     public Transform damagePopupPrefab;
+    
+    public Sprite s_White;
+    public Sprite s_Circle;
+
+    public Material m_White;
 }

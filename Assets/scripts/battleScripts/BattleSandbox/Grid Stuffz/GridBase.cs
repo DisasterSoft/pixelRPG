@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Utilities;
+using DumbLuck.Utilities;
 
 /*
  * Grid Generálása átmozgatva ide, hogy meg legyen a saját script-je.
