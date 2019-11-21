@@ -52,10 +52,24 @@ public class cardScript : MonoBehaviour
     }
     public void addCard(string card)
     {
-        Debug.Log("hozzáadva " + card);
+       
         string seged = db.readTheData(15);
-        seged = seged + card + ",";
-        db.addThingToList(15, seged);
+        string[] cards_array = seged.Split(',');
+        bool megvan = true;
+        for (int i = 0; i < cards_array.Length; i++)
+        {
+            if (cards_array[i] == card)
+            {
+                megvan = false;
+                break;
+            }
+        }
+        if (megvan)
+        {
+            Debug.Log("hozzáadva " + card);
+            seged = seged + card + ",";
+            db.addThingToList(15, seged);
+        }
 
     }
     public void closeCardPanel()

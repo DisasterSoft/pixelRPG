@@ -70,15 +70,15 @@ public class tavernSpeeker : MonoBehaviour
         }
         if (this.name == "Thing1")
         {
-            if (thingCount_st == 1)
+            if (thingCount_st == 0)
             {
                 flowchart.SendFungusMessage("Thing2");
             }
-            if (thingCount_st == 2)
+            if (thingCount_st == 1)
             {
                 flowchart.SendFungusMessage("Thing3");
             }
-            if (thingCount_st == 3)
+            if (thingCount_st == 2)
             {
                 thingCount_st--;
             }
@@ -204,15 +204,10 @@ public class tavernSpeeker : MonoBehaviour
     {
         globalVariable.addObjectToList("assasin");
         globalVariable.setPlayerCoord();
-        //globalVariable.setCard("c1");
+       
     }
    
-   /* IEnumerator loadSceene()
-    {
-        yield return new WaitForSeconds(0.1f);
-       
-
-    }*/
+ 
 
 
 }

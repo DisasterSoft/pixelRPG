@@ -145,8 +145,22 @@ public class globalVariable : MonoBehaviour
     }
     public static  void addObjectToList(string objective)
     {
-     objectInField = objectInField + objective + ",";
-     db.addObjectToList(objective);
+        string theObjects = db.readTheData(18);
+        string[] objects_array = theObjects.Split(',');
+        bool megvan = true;
+        for (int i = 0; i < objects_array.Length; i++)
+        {
+            if (objects_array[i] == objective)
+            {
+                megvan = false;
+                break;
+            }
+        }
+        if (megvan)
+        {
+            objectInField = objectInField + objective + ",";
+            db.addObjectToList(objective);
+        }
     }
     public  void addObjectToListNonstatic(string objective)
     {
@@ -182,8 +196,20 @@ public class globalVariable : MonoBehaviour
     }
     public static void setCard(string card)
     {
-        Cards = db.readTheData(15)  + card + ",";
-        db.addThingToList(15, Cards);
+        string theCards=db.readTheData(15);
+        string[] cards_array = theCards.Split(',');
+        bool megvan = true;
+        for (int i = 0;i<cards_array.Length;i++)
+        {
+            if(cards_array[i]==card)
+            {
+                megvan = false;
+                break;
+            }
+        }
+            if (megvan) {
+                Cards = db.readTheData(15) + card + ",";
+                db.addThingToList(15, Cards); }
     }
    
     public void Update()
