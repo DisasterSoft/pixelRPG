@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using Utilities;
+using DumbLuck.Utilities;
 
 public class DamagePopup : MonoBehaviour
 {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using Utilities;
+using DumbLuck.Utilities;
 
 public enum Directions //Csak azért, hogy olvashatóbb legyen a kód.
 {
